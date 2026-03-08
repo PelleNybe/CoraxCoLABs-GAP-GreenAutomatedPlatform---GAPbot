@@ -15,7 +15,7 @@ Developed by Corax CoLAB, this ecosystem is an enterprise-grade, edge-native sol
 
 ---
 
-![GAPbot in action](/assets/hero-gapbot.jpg)
+![GAPbot in action](CoraxCoLABs-GAP-GreenAutomatedPlatform---GAPbot/assets/hero-gapbot.png)
 
 ## 🚀 The Vision: Full-Stack of Matter
 At Corax CoLAB, we don't just design systems; we build them from the ground up to ensure our automated solutions are not just "smart," but ecologically sound. The GAP system optimizes resource flows through a decentralized network of IoT sensors, robust Edge AI, and autonomous robotics.
