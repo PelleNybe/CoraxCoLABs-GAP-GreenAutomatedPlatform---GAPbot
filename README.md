@@ -35,6 +35,21 @@ The nervous system of the operation.
 * **Web3 Audit Ledger:** Ensures absolute data integrity by cryptographically signing critical events and anchoring them to a blockchain using quantum-resistant algorithms.
 * **Modern Dashboard:** A React/Vite based Mission Control for real-time fleet monitoring and teleoperation.
 
+  ![Dashboard Preview](./assets/dashboard-preview.png)
+
+
+---
+
+
+## 📚 Documentation
+
+Dive deeper into the GAP ecosystem architecture and specifications:
+
+* [**Platform Architecture**](./docs/01-platform-architecture.md): The Edge-First approach, cloud synchronization, and data integrity.
+* [**Hardware Specifications**](./docs/02-hardware-specs.md): Core compute, AI acceleration, and kinematics of the GAPbot.
+* [**AI & Vision**](./docs/03-ai-and-vision.md): Real-time processing and the EcoMind & InnoBrain modules.
+* [**AI Context Layer**](./docs/llms.txt): Detailed structural overview for LLMs (`llms.txt`).
+
 ---
 
 ## 🛠️ High-Level Tech Stack
