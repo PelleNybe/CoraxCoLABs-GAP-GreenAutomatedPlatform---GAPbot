@@ -63,3 +63,14 @@ The system utilizes several standard interfaces:
 *   **ROS 2 Nodes (`/gapbot/src/gapbot_pkg/nodes`)**: Implement the core robotic autonomy. The `hexapod_controller` manages gait and leg positioning, while `autonomous_navigation` fuses GPS and Lidar data to plan paths and avoid obstacles.
 *   **AI Inference (`/gap/edge_ai`, `/gapbot/src/core/modules/vision`)**: Captures camera feeds, runs them through the Hailo-8L NPU using models like YOLOv8, and outputs bounding boxes, classifications, or environmental insights.
 *   **Audit Ledger (`/gap/security/audit_ledger.py`)**: Ensures data integrity by cryptographically signing critical events (like mode changes or safety stops) and optionally anchoring them to a Web3 blockchain.
+
+---
+## Recent Mission Control Additions (Frontend)
+The React/Vite based Mission Control dashboard has been significantly upgraded with the following components in `mission-control/src/`:
+
+*   **App.tsx**: The main dashboard layout integrating the new components.
+*   **Telemetry.tsx**: Visualizes real-time metrics (battery, CPU, memory, network, structural integrity).
+*   **VisionStream.tsx**: Renders the live video feed with bounding boxes (YOLOv8 object detection) from the edge device.
+*   **LidarMap.tsx**: A WebGL/Three.js based visualization of the 2D/3D point cloud data for situational awareness.
+*   **DigitalTwin.tsx**: A synchronized 3D representation of the GAPbot's physical state and kinematics.
+*   **AuditLedger.tsx**: A UI for viewing the Web3 cryptographically signed event log ensuring data integrity.
