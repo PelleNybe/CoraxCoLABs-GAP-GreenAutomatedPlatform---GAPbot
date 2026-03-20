@@ -4,6 +4,31 @@
 
 @layer base {
   body {
-    @apply bg-zinc-950 text-slate-100 overflow-hidden;
+    @apply bg-background text-textMain antialiased overflow-hidden selection:bg-primary-500/30 selection:text-white;
+    font-variant-ligatures: none;
   }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px theme('colors.primary.glow');
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.background');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.surfaceHighlight');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.textFaint');
 }
