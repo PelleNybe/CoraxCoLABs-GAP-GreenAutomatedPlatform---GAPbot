@@ -30,6 +30,8 @@ export default function AuditLedger() {
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [filterSeverity, setFilterSeverity] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   // Auto-scroll to bottom unless paused
   useEffect(() => {
@@ -76,6 +78,14 @@ export default function AuditLedger() {
       }
   }
 
+  const filteredLogs = logs.filter(log => {
+      const matchesSeverity = filterSeverity === 'all' || log.severity === filterSeverity;
+      const matchesSearch = log.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            log.payload.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            log.hash.toLowerCase().includes(searchQuery.toLowerCase());
+      return matchesSeverity && matchesSearch;
+  });
+
   return (
     <div className="w-full h-full bg-zinc-950 flex flex-col font-mono text-sm relative">
         {/* Header Bar */}
@@ -105,6 +115,39 @@ export default function AuditLedger() {
             </div>
         </div>
 
+        {/* Filter Bar */}
+        <div className="h-12 border-b border-zinc-800 bg-zinc-900/50 flex items-center px-6 gap-4 z-10 shrink-0 backdrop-blur text-xs">
+            <div className="flex items-center gap-2">
+                <span className="text-zinc-500">SEVERITY:</span>
+                <select
+                    className="bg-zinc-950 border border-zinc-800 text-zinc-300 rounded px-2 py-1 outline-none focus:border-emerald-500"
+                    value={filterSeverity}
+                    onChange={(e) => setFilterSeverity(e.target.value)}
+                >
+                    <option value="all">ALL</option>
+                    <option value="info">INFO</option>
+                    <option value="success">SUCCESS</option>
+                    <option value="warn">WARN</option>
+                    <option value="critical">CRITICAL</option>
+                </select>
+            </div>
+
+            <div className="flex-1 flex items-center gap-2">
+                <span className="text-zinc-500">SEARCH:</span>
+                <input
+                    type="text"
+                    placeholder="Filter logs by type, payload, or hash..."
+                    className="w-full max-w-md bg-zinc-950 border border-zinc-800 text-zinc-300 rounded px-3 py-1 outline-none focus:border-emerald-500 transition-colors"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+            </div>
+
+            <div className="text-zinc-500">
+                MATCHES: <span className="text-emerald-400">{filteredLogs.length}</span> / {logs.length}
+            </div>
+        </div>
+
         {/* Matrix Rain / Cryptographic overlay effect */}
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none mix-blend-overlay" />
 
@@ -115,7 +158,7 @@ export default function AuditLedger() {
             style={{ scrollbarWidth: 'thin', scrollbarColor: '#3f3f46 #18181b' }}
         >
             <AnimatePresence initial={false}>
-                {logs.map((log) => (
+                {filteredLogs.map((log) => (
                     <motion.div
                         key={log.id}
                         initial={{ opacity: 0, x: -20 }}
@@ -147,7 +190,7 @@ export default function AuditLedger() {
                 ))}
             </AnimatePresence>
 
-            {!isPaused && (
+            {!isPaused && filteredLogs.length === logs.length && (
                  <div className="py-2 text-center text-xs text-emerald-500/50 animate-pulse">
                      WAITING FOR NEXT BLOCK...
                  </div>
