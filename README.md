@@ -1,130 +1,165 @@
 <div align="center">
-  <img src="./assets/gap-logo.jpg" alt="GAP Logo" width="250" style="border-radius: 20px;" />
+  <img src="./assets/gap-logo.jpg" alt="GAP Logo" width="250" style="border-radius: 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.2);" />
 
 # 🌿 GAP System & GAPbot Architecture
 
 **Intelligent Automation for the Physical World | By [Corax CoLAB](https://coraxcolab.com)**
 
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=129532&center=true&vCenter=true&width=700&lines=Intelligent+Automation+for+the+Physical+World;Edge-First+AI+and+Autonomous+Robotics;Harmonizing+Nature+with+Digital+Tech;Precision+Agriculture+%26+Deep+Tech)](https://git.io/typing-svg)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=129532&center=true&vCenter=true&width=600&lines=Intelligent+Automation+for+the+Physical+World;Edge-First+AI+and+Autonomous+Robotics;Harmonizing+Nature+with+Digital+Tech)](https://git.io/typing-svg)
+---
+
+### 🚀 **Empowering the Future of Deep Tech & AgTech**
 
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![ROS 2](https://img.shields.io/badge/ROS_2-22314E?style=for-the-badge&logo=ros&logoColor=white)](https://docs.ros.org/)
 [![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi%205-C51A4A?style=for-the-badge&logo=Raspberry-Pi)](https://raspberrypi.com)
 [![Edge AI](https://img.shields.io/badge/Hailo_8L-Edge_AI-000000?style=for-the-badge)](https://hailo.ai/)
 [![Web3](https://img.shields.io/badge/Web3-Audit_Ledger-blue?style=for-the-badge)](#-web3-audit-ledger)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 <br />
 
-![GAPbot in action](./assets/hero-gapbot.png)
+<img src="./assets/hero-gapbot.png" alt="GAPbot in action" width="100%" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);" />
 
-*Welcome to the architectural overview of the **Green Automated Platform (GAP)** and the **GAPbot**.*
+*Welcome to the definitive architectural overview of the **Green Automated Platform (GAP)** and the remarkable **GAPbot**.*
 
 </div>
 
 ---
 
-> ⚠️ **Note:** This repository serves as a public architectural overview, documentation hub, and AI context layer (`llms.txt`). The core proprietary source code for the AI models (EcoMind, InnoBrain) and the GAP platform remains in private repositories.
+> ⚠️ **Note:** This repository serves as a **public architectural overview, documentation hub, and AI context layer** (`llms.txt`). The core proprietary source code for the AI models (EcoMind, InnoBrain) and the complete GAP platform remains securely housed in private repositories.
 
 <br />
 
-## 🚀 The Vision: Full-Stack of Matter
+## 🌟 The Vision: Full-Stack of Matter
 
-At Corax CoLAB, we don't just design systems; we build them from the ground up to ensure our automated solutions are not just "smart," but ecologically sound. The GAP system optimizes resource flows through a decentralized network of IoT sensors, robust Edge AI, and autonomous robotics.
+At **Corax CoLAB**, we don't just design systems; we engineer them from the ground up to ensure our automated solutions are not merely "smart," but radically ecologically sound. The GAP system masterfully optimizes resource flows through a decentralized network of IoT sensors, robust Edge AI, and cutting-edge autonomous robotics.
 
 <div align="center">
-  <img src="./assets/ai-concept.png" alt="GAP AI Concept" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-  <p><i>The future of Edge AI and ecological automation.</i></p>
-</div>
-
-<div align="center">
-  <img src="./assets/dashboard-preview.png" alt="Mission Control Dashboard Preview" width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
-  <p><i>The modern React/Vite based Mission Control dashboard for real-time fleet monitoring and teleoperation.</i></p>
+  <img src="./assets/ai-concept.png" alt="GAP AI Concept" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
+  <p><i>The Future of Edge AI and Ecological Automation</i></p>
 </div>
 
 <br />
 
-### 🧠 The GAP Platform (Mission Control)
+## 🛠️ Deep Dive: The Architecture
 
-The nervous system of the operation has been significantly upgraded. Our new Mission Control dashboard features a suite of world-class capabilities:
-
-* 📊 **Live Telemetry (`Telemetry.tsx`):** Real-time monitoring of system vitals, battery life, structural integrity, and network status.
-* 📷 **Vision Stream (`VisionStream.tsx`):** High-definition, low-latency video feed directly from the GAPbot's edge sensors with bounding boxes for detected objects via YOLOv8.
-* 🗺️ **Lidar Map (`LidarMap.tsx`):** Real-time 2D/3D point cloud rendering for precise situational awareness, generated by the onboard Lidar array.
-* 🤖 **Digital Twin (`DigitalTwin.tsx`):** A real-time synchronized 3D representation of the GAPbot's physical state, kinematics, and orientation, allowing for predictive modeling and remote inspection.
-* 🔗 **Web3 Audit Ledger (`AuditLedger.tsx`):** A verifiable, immutable log of critical events, safety stops, and sensor data anchored to a blockchain using quantum-resistant algorithms, ensuring absolute data integrity.
-* ☁️ **Edge-First AI:** Inference runs locally. The system syncs SQLite data to a cloud (Supabase) orchestrator only when connectivity is available.
-* 🎯 **Mission Orchestrator:** Translates high-level human goals ("Scan Sector A") into actionable robotic commands via MQTT.
-
-<br />
-
-### 🕷️ GAPbot: The Hexapod Explorer
-
-The physical extension of the GAP ecosystem. GAPbot is a six-legged autonomous robot designed for challenging terrains where wheeled robots fail.
-
-* **Hardware Core:** Powered by a Raspberry Pi 5 (16GB RAM) with active cooling, running headless via SSH/VNC.
-* **AI Acceleration:** Equipped with a Hailo-8L NPU over PCIe for real-time vision processing (YOLOv8) and environmental analysis without relying on the cloud.
-* **High-Speed I/O:** NVMe SSD connected via PCIe/USB 3.1 for rapid database logging and sensor telemetry.
-* **Autonomy:** Runs on ROS 2 (Jazzy Jalisco) with RTK-GPS and Lidar for precision navigation and obstacle avoidance.
-* **Actuation:** 18 servos controlled via I2C (PCA9685) managed by custom inverse kinematics algorithms.
-
----
-
-## 📚 Documentation
-
-Dive deeper into the GAP ecosystem architecture and specifications:
-
-| Topic | Description |
-|---|---|
-| 🏗️ [**Platform Architecture**](./docs/01-platform-architecture.md) | The Edge-First approach, cloud synchronization, Web3 data integrity, and mission control components. |
-| ⚙️ [**Hardware Specifications**](./docs/02-hardware-specs.md) | Core compute, AI acceleration, kinematics, and power systems of the GAPbot. |
-| 👁️ [**AI & Vision**](./docs/03-ai-and-vision.md) | Real-time processing, object detection, and the EcoMind & InnoBrain modules. |
-| 🤖 [**AI Context Layer**](./docs/llms.txt) | Detailed structural overview and context optimized for LLMs. |
-| 🎮 [**Mission Control**](./mission-control/README.md) | Setup and details for the React/Vite based mission control frontend. |
-
----
-
-## 🛠️ High-Level Tech Stack
+Explore the phenomenal capabilities of the GAP ecosystem through our interactive modules below.
 
 <details>
-<summary><b>Click to expand</b></summary>
+<summary><b>🧠 The GAP Platform (Mission Control)</b></summary>
 <br>
 
-* **Frontend & Mission Control:** React, TypeScript, Vite, TailwindCSS, WebGL/Three.js (for Digital Twin & Lidar).
-* **Languages & Frameworks:** Python (FastAPI, PyTorch), C++, Node.js.
-* **Robotics & Autonomy:** ROS 2 (Jazzy Jalisco), rclpy, custom kinematics.
-* **Hardware Interfaces:** PCIe, I2C, SPI, UART/Serial, GPIO (`RPi.GPIO`, `gpiozero`).
-* **Communication & IoT:** Paho-MQTT, WebSockets, Supabase.
-* **AI & Vision:** YOLOv8, Hailo-8L NPU, OpenCV.
-* **Security & Integrity:** Web3 Audit Ledger, Quantum-Resistant Cryptography (`liboqs-python`).
+The nervous system of the operation has been massively upgraded. Our modern React/Vite-based Mission Control dashboard delivers world-class, real-time command capabilities:
+
+*   📊 **Live Telemetry (`Telemetry.tsx`):** Real-time monitoring of system vitals, battery life, structural integrity, and network status.
+*   📷 **Vision Stream (`VisionStream.tsx`):** High-definition, low-latency video feed directly from edge sensors, featuring live bounding boxes for detected objects via **YOLOv8**.
+*   🗺️ **Lidar Map (`LidarMap.tsx`):** Exquisite real-time 2D/3D point cloud rendering for unparalleled situational awareness, meticulously generated by the onboard Lidar array.
+*   🤖 **Digital Twin (`DigitalTwin.tsx`):** A mesmerizing real-time synchronized 3D representation of the GAPbot's physical state, kinematics, and orientation, enabling predictive modeling and remote inspection.
+*   🔗 **Web3 Audit Ledger (`AuditLedger.tsx`):** An invincible, immutable log of critical events, safety stops, and sensor data anchored to a blockchain using quantum-resistant algorithms, guaranteeing absolute data integrity.
+*   ☁️ **Edge-First AI:** Inference runs completely locally. The system securely syncs SQLite data to a cloud orchestrator (Supabase) **only** when connectivity is perfectly available.
+*   🎯 **Mission Orchestrator:** Instantly translates high-level human objectives ("Scan Sector A") into precise, actionable robotic commands via MQTT.
+
+<div align="center">
+  <img src="./assets/dashboard-preview.png" alt="Mission Control Dashboard Preview" width="100%" style="border-radius: 10px; border: 1px solid #ddd; margin-top: 15px;" />
+  <p><i>The powerful React/Vite based Mission Control dashboard.</i></p>
+</div>
+</details>
+
+<details>
+<summary><b>🕷️ GAPbot: The Hexapod Explorer</b></summary>
+<br>
+
+The physical extension of the GAP ecosystem. **GAPbot** is an unstoppable six-legged autonomous robot meticulously designed for challenging, unstructured terrains where wheeled robots fundamentally fail.
+
+*   **Hardware Core:** Fueled by a beastly **Raspberry Pi 5 (16GB RAM)** with active cooling, running flawlessly headless via SSH/VNC.
+*   **AI Acceleration:** Supercharged with a **Hailo-8L NPU** over PCIe for blistering real-time vision processing (YOLOv8) and environmental analysis without any reliance on the cloud.
+*   **High-Speed I/O:** Ultra-fast NVMe SSD connected via PCIe/USB 3.1 for instantaneous database logging and sensor telemetry.
+*   **Autonomy:** Powered by **ROS 2 (Jazzy Jalisco)**, integrating RTK-GPS and Lidar for astonishingly precise navigation and obstacle avoidance.
+*   **Actuation:** 18 high-torque servos masterfully controlled via I2C (PCA9685) managed by our custom inverse kinematics algorithms.
 
 </details>
 
+<br />
+
 ---
 
-## 🤝 Collaborate with Corax CoLAB
+## 🏗️ The High-Level Tech Stack
+
+Our stack is built for performance, reliability, and scale:
+
+| Category | Technologies |
+| :--- | :--- |
+| **Frontend & Mission Control** | React, TypeScript, Vite, TailwindCSS, WebGL/Three.js |
+| **Languages & Frameworks** | Python (FastAPI, PyTorch), C++, Node.js |
+| **Robotics & Autonomy** | ROS 2 (Jazzy Jalisco), rclpy, custom kinematics |
+| **Hardware Interfaces** | PCIe, I2C, SPI, UART/Serial, GPIO (`RPi.GPIO`, `gpiozero`) |
+| **Communication & IoT** | Paho-MQTT, WebSockets, Supabase |
+| **AI & Vision** | YOLOv8, Hailo-8L NPU, OpenCV |
+| **Security & Integrity** | Web3 Audit Ledger, Quantum-Resistant Cryptography (`liboqs-python`) |
+
+---
+
+## 📚 Comprehensive Documentation
+
+Dive deeper into the brilliant engineering behind the GAP ecosystem:
+
+| Topic | Description |
+| :--- | :--- |
+| 🏗️ [**Platform Architecture**](./docs/01-platform-architecture.md) | Edge-First strategy, cloud sync, Web3 data integrity, & mission control. |
+| ⚙️ [**Hardware Specifications**](./docs/02-hardware-specs.md) | Deep dive into compute, AI acceleration, kinematics, and power systems. |
+| 👁️ [**AI & Vision**](./docs/03-ai-and-vision.md) | Real-time processing, object detection, and the EcoMind & InnoBrain modules. |
+| 🤖 [**AI Context Layer**](./docs/llms.txt) | Detailed structural overview and context optimized for LLMs. |
+| 🎮 [**Mission Control**](./mission-control/README.md) | Setup and profound details for the React/Vite based frontend. |
+
+---
+
+<br />
 
 <div align="center">
-  <img src="./assets/coraxcolabloggarund.png" alt="Corax CoLAB Logo" width="150" />
-</div>
 
-Corax CoLAB is led by **Pelle Nyberg**—Deep Tech Developer, AI & Robotics Innovator, and Master Gardener. With a unique background spanning industrial quality management, forestry, and hardware-level coding, Corax CoLAB brings a holistic approach to Deep Tech and AgTech.
+## 👨‍💻 Meet the Developer & 🏢 Corax CoLAB
 
-**We are open to:**
-* 🚀 Consulting projects and technical partnerships.
-* 🤖 New opportunities in AI & Robotics Development (Python/Linux/ROS).
-* 🏗️ Deep Tech & IoT Architecture design.
-* 🌱 GreenTech Innovation & Strategy.
+<img src="./assets/coraxcolabloggarund.png" alt="Corax CoLAB Logo" width="180" style="margin-bottom: 15px;" />
 
-<div align="center">
-  <h3>Let's build the future together.</h3>
-  <a href="https://coraxcolab.com"><img src="https://img.shields.io/badge/Website-coraxcolab.com-22314E?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" /></a>
-  <a href="https://www.coraxgardening.se"><img src="https://img.shields.io/badge/Gardening-coraxgardening.se-C51A4A?style=for-the-badge&logo=plant&logoColor=white" alt="Gardening" /></a>
+### **Pelle Nyberg**
+**Deep Tech Developer | AI & Robotics Innovator | Master Gardener**
+
+With a remarkably unique background seamlessly spanning industrial quality management, sophisticated forestry, and incredibly low-level hardware coding, Pelle brings an undeniably holistic and visionary approach to Deep Tech and AgTech.
+
+Connect with Pelle and discover his exceptional work:
+
+[![GitHub](https://img.shields.io/badge/GitHub-PelleNybe-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PelleNybe)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pelle_Nyberg-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pellenyberg/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-pellenybe.github.io-FF5722?style=for-the-badge&logo=dev.to&logoColor=white)](https://pellenybe.github.io)
+[![CryptoP](https://img.shields.io/badge/CryptoP-Project-8A2BE2?style=for-the-badge&logo=bitcoin&logoColor=white)](https://cryptop.coraxcolab.com)
+
+<br />
+
+### **Corax CoLAB**
+**Intelligent Automation. Harmonizing the natural world with the digital one.**
+
+Corax CoLAB is at the absolute forefront of building autonomous agents capable of brilliantly navigating, relentlessly analyzing, and precisely acting in the most unstructured and challenging physical environments on Earth.
+
+**We are actively open to:**
+*   🚀 Elite Consulting projects and strategic technical partnerships.
+*   🤖 Groundbreaking opportunities in AI & Robotics Development (Python/Linux/ROS).
+*   🏗️ Unparalleled Deep Tech & IoT Architecture design.
+*   🌱 Revolutionary GreenTech Innovation & Strategy.
+
+<h3>Let's build an incredible future together.</h3>
+
+[![Corax CoLAB Website](https://img.shields.io/badge/Website-coraxcolab.com-22314E?style=for-the-badge&logo=googlechrome&logoColor=white)](https://coraxcolab.com)
+[![Corax Gardening](https://img.shields.io/badge/Gardening-coraxgardening.se-C51A4A?style=for-the-badge&logo=plant&logoColor=white)](https://www.coraxgardening.se)
+
 </div>
 
 <br />
 
 <div align="center">
-  <i>Intelligent Automation. Harmonizing the natural world with the digital one.</i>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=129532&height=120&section=footer" width="100%"/>
 </div>
