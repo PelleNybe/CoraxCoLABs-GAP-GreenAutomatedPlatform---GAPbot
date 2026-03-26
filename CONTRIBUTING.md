@@ -36,3 +36,5 @@ We actively welcome your pull requests!
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 If you want to discuss the project, reach out to Pelle Nyberg on [LinkedIn](https://www.linkedin.com/in/pellenyberg/).
+
+<!-- Updated for GAP Ecosystem Showcase -->
