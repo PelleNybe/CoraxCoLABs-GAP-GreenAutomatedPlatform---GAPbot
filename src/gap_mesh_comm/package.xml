@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>gap_mesh_comm</name>
+  <version>0.0.1</version>
+  <description>ROS 2 mesh communication scaffolding for the GAP ecosystem (GAPbot and GAPdrone).</description>
+  <maintainer email="info@coraxcolab.com">Pelle Nyberg</maintainer>
+  <license>MIT</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <!-- <depend>px4_msgs</depend> --> <!-- Not actually compiling px4_msgs -->
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
