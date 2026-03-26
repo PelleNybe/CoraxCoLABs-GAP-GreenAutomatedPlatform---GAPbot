@@ -1,47 +1,47 @@
 # Hardware Integration Guide: Raspberry Pi 5 to Holybro Pixhawk 6C
 
-This document provides a highly technical overview of the physical and logical integration between the edge-compute node (Raspberry Pi 5) and the flight controller (Holybro Pixhawk 6C) within the GAP ecosystem.
+This document provides a highly technical overview of integrating the Raspberry Pi 5 (RPi5) companion computer with the Holybro Pixhawk 6C flight controller within the GAPdrone architecture.
 
-## Physical Interface & Serial Communication
+## Logical Connection
 
-The primary communication bridge between the ROS 2 node running on the RPi5 and the PX4 Autopilot on the Pixhawk 6C is a high-speed UART connection via MicroXRCE-DDS.
+The GAPdrone utilizes an Edge-First architecture where the Raspberry Pi 5 acts as the high-level brain. It runs ROS 2 and manages intensive Edge AI tasks using the Hailo-8 NPU.
 
-### UART Pinout Mapping
+Instead of legacy protocols like MAVProxy, we employ **MicroXRCE-DDS**. The MicroXRCE-DDS agent runs on the Raspberry Pi 5, communicating directly with the MicroXRCE-DDS client embedded within the Pixhawk 6C's PX4 Autopilot. This allows for seamless, low-latency publish/subscribe communication of RTPS/MAVLink messages over a serial connection.
 
-Connections must be made crossing the TX and RX lines to establish the serial link. We typically utilize the `TELEM2` port on the Pixhawk.
+## Physical UART Connection
 
-| Holybro Pixhawk 6C (TELEM2) | Description | Raspberry Pi 5 (GPIO Header) | Description |
+The physical bridge between the RPi5 and the Pixhawk 6C is a serial UART connection.
+
+We utilize the **TELEM2** port on the Pixhawk 6C, mapping its TX/RX pins directly to the dedicated UART TX/RX GPIO pins on the Raspberry Pi 5.
+
+### Pinout Mapping
+
+| Holybro Pixhawk 6C (TELEM2) | Function | Raspberry Pi 5 (GPIO) | Pin Number (RPi5) |
 | :--- | :--- | :--- | :--- |
-| Pin 1 (VCC) | 5V Output | **DO NOT CONNECT** | *See Power Requirements below* |
-| Pin 2 (TX) | Transmit | Pin 10 (GPIO 15 - RXD) | Receive |
-| Pin 3 (RX) | Receive | Pin 8 (GPIO 14 - TXD) | Transmit |
-| Pin 4 (CTS) | Clear to Send | *Optional / NC* | |
-| Pin 5 (RTS) | Request to Send | *Optional / NC* | |
-| Pin 6 (GND) | Ground | Pin 6 (Ground) | Common Ground |
+| Pin 2 | TX (Transmit) | RXD (Receive) | GPIO 15 (Pin 10) |
+| Pin 3 | RX (Receive) | TXD (Transmit) | GPIO 14 (Pin 8) |
+| Pin 6 | GND (Ground) | GND (Ground) | Pin 6 (or any Ground) |
 
-*Note: The grounds must be tied together to ensure a common reference voltage for the serial lines.*
+*Note: Ensure cross-over connection (TX to RX, RX to TX).*
 
-## ⚠️ Critical Power Requirements
+## Critical Power Requirements
 
-**DO NOT power the Raspberry Pi 5 directly from the Pixhawk TELEM2 VCC line.**
+The Raspberry Pi 5, especially when performing intensive real-time AI inference with the Hailo-8L NPU, draws significant current.
 
-The RPi5 running intensive Hailo-8L Edge AI inference pipelines experiences significant transient power spikes. Relying on the flight controller's internal BEC or standard telemetry power will result in voltage drops (brownouts).
+⚠️ **CRITICAL: You must use a dedicated 5V/5A Battery Eliminator Circuit (BEC).** ⚠️
 
-A brownout during flight can cause the edge node to reboot, severing the ROS 2 / MicroXRCE-DDS link and potentially triggering an autonomous failsafe or loss of high-level control.
+Attempting to power the Raspberry Pi 5 directly from the Pixhawk's telemetry ports or a standard low-power BEC will result in voltage drops (brownouts) during peak AI workloads, causing sudden reboots of the companion computer and potential loss of drone control.
 
-### Dedicated 5V/5A BEC Requirement
+### Raspberry Pi 5 Configuration
 
-You **MUST** use a dedicated, high-quality 5V/5A Battery Eliminator Circuit (BEC) tied directly to the main flight battery to power the Raspberry Pi 5 via its USB-C port or 5V GPIO pins.
+To ensure the RPi5 can deliver maximum power to connected USB peripherals (like the Hailo-8 NPU module if connected via USB/M.2 HAT), you must explicitly enable maximum USB current in the boot configuration.
 
-*   **Recommended Specs:** 5V output, minimum 5A continuous rating (peak higher).
-*   **Isolation:** This isolates the noisy, high-draw compute load from the sensitive flight controller logic.
+1. Open `/boot/firmware/config.txt` (or `/boot/config.txt` depending on OS version).
+2. Add the following line:
+   ```ini
+   usb_max_current_enable=1
+   ```
+3. Reboot the Raspberry Pi 5.
 
-## Logical Configuration
-
-1.  **Pixhawk (PX4):** Ensure the `TELEM2` port is configured for the `uxrce_dds_client` (MAV_0_CONFIG or similar depending on PX4 version and specific port usage). Set the baud rate to a high value (e.g., `921600`).
-2.  **Raspberry Pi (ROS 2):** Ensure the `MicroXRCEAgent` is running and bound to the corresponding serial device (`/dev/serial0` or `/dev/ttyAMA0`), matching the baud rate configured on the flight controller.
-
-```bash
-# Example agent startup on RPi5
-MicroXRCEAgent serial --dev /dev/ttyAMA0 -b 921600
-```
+---
+*For further information, please consult the Corax CoLAB team or review the component BOMs in `/hardware/`.*
