@@ -3,10 +3,12 @@
 <img src="./assets/hero-gapbot.png" alt="GAPbot in action" width="100%" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);" />
 
 # 🚀 Corax CoLAB: Green Automated Platform (GAP) Ecosystem
+[![ROS 2 Humble](https://img.shields.io/badge/ROS_2-Humble-22314E?style=for-the-badge&logo=ros&logoColor=white)](https://docs.ros.org/en/humble/index.html)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![ROS 2](https://img.shields.io/badge/ROS_2-22314E?style=for-the-badge&logo=ros&logoColor=white)](https://docs.ros.org/)
+[![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)](https://isocpp.org/)
 [![Edge AI](https://img.shields.io/badge/Hailo_8L-Edge_AI-000000?style=for-the-badge)](https://hailo.ai/)
-[![Web3](https://img.shields.io/badge/Web3-Audit_Ledger-blue?style=for-the-badge)](#-web3-audit-ledger)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg?style=for-the-badge)](https://github.com/PelleNybe/GAP-ecosystem/actions)
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=129532&center=true&vCenter=true&width=700&lines=Intelligent+Automation+for+the+Physical+World;Edge-First+AI+and+Autonomous+Robotics;Harmonizing+Nature+with+Digital+Tech;Precision+Agriculture+%26+Deep+Tech)](https://git.io/typing-svg)
 
@@ -28,6 +30,25 @@ Our enterprise-grade technologies empower organizations to optimize resource flo
 </div>
 
 <br />
+
+
+## 🏗️ System Architecture
+
+### GAPdrone Internal Data Flow
+```mermaid
+flowchart LR
+    A[Camera] -->|Raw Video| B(Hailo-8 NPU)
+    B -->|AI Bounding Boxes| C{ROS 2 Brain Node}
+    C -->|ROS 2 Topic| D[MicroXRCE-DDS]
+    D -->|MAVLink / RTPS| E(Pixhawk 6C Flight Controller)
+```
+
+### Decentralized Mesh Topology
+```mermaid
+flowchart LR
+    A[Operator <br/> Web3 Dashboard] <-->|B.A.T.M.A.N.-adv| B((GAPbot <br/> Ground))
+    B <-->|B.A.T.M.A.N.-adv| C((GAPdrone <br/> Aerial))
+```
 
 ## 🧠 The GAP Ecosystem
 
