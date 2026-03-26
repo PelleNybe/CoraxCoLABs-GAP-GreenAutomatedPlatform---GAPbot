@@ -32,24 +32,6 @@ Our enterprise-grade technologies empower organizations to optimize resource flo
 <br />
 
 
-## 🏗️ System Architecture
-
-### GAPdrone Internal Data Flow
-```mermaid
-flowchart LR
-    A[Camera] -->|Raw Video| B(Hailo-8 NPU)
-    B -->|AI Bounding Boxes| C{ROS 2 Brain Node}
-    C -->|ROS 2 Topic| D[MicroXRCE-DDS]
-    D -->|MAVLink / RTPS| E(Pixhawk 6C Flight Controller)
-```
-
-### Decentralized Mesh Topology
-```mermaid
-flowchart LR
-    A[Operator <br/> Web3 Dashboard] <-->|B.A.T.M.A.N.-adv| B((GAPbot <br/> Ground))
-    B <-->|B.A.T.M.A.N.-adv| C((GAPdrone <br/> Aerial))
-```
-
 ## 🧠 The GAP Ecosystem
 
 The **Green Automated Platform (GAP)** is an overarching decentralized software and hardware ecosystem. Rather than relying on fragile cloud architectures, GAP is **Edge-First**. It leverages local high-speed SQLite databases and massive hardware acceleration to guarantee offline autonomy.
@@ -98,6 +80,24 @@ The eye in the sky.
 <br />
 
 ---
+
+## 🏗️ System Architecture
+
+### GAPdrone Internal Data Flow
+```mermaid
+flowchart LR
+    A[Camera] -->|Raw Video| B(Hailo-8 NPU)
+    B -->|AI Bounding Boxes| C{ROS 2 Brain Node}
+    C -->|ROS 2 Topic| D[MicroXRCE-DDS]
+    D -->|MAVLink / RTPS| E(Pixhawk 6C Flight Controller)
+```
+
+### Decentralized Mesh Topology
+```mermaid
+flowchart LR
+    A[Operator <br/> Web3 Dashboard] <-->|B.A.T.M.A.N.-adv| B((GAPbot <br/> Ground))
+    B <-->|B.A.T.M.A.N.-adv| C((GAPdrone <br/> Aerial))
+```
 
 ## 👨‍💻 Meet the Developer
 
