@@ -30,4 +30,6 @@ jobs:
     - name: Run Ament Linters
       run: |
         source /opt/ros/humble/setup.bash
+        colcon build --packages-select public_interfaces
+        source install/setup.bash
         colcon test --packages-select public_interfaces --executor sequential --event-handlers console_direct+ --pytest-args -m linter
