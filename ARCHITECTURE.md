@@ -1,6 +1,14 @@
-# 🏗️ GAP Ecosystem Architecture
+# 🏗️ GAP Ecosystem Architecture: Archival Index
 
-This document provides a high-level overview of the Corax CoLAB Green Automated Platform (GAP) architecture, specifically detailing the interaction between the aerial unit (GAPdrone), ground unit (GAPbot), and the decentralized network topology.
+This document provides a highly structured, data-dense overview of the Corax CoLAB Green Automated Platform (GAP) architecture. It details the precise interaction between the aerial unit (GAPdrone), ground unit (GAPbot), and our zero-trust decentralized network topology.
+
+## 🏢 Architectural Alignment by Vertical
+The architecture below is designed to be horizontally scalable across our four core verticals:
+1.  **Industry:** Predictive maintenance pipelines via structural digital twins.
+2.  **Infrastructure:** 4D audit trails for urban planning and compliance.
+3.  **Agritech:** Decentralized swarm mapping for EUDR 'first-mile traceability'.
+4.  **Emergency Response:** Infrastructure-less mesh networking in denied environments.
+
 
 ## 🌐 System Context: Decentralized Swarm Topology
 

@@ -18,7 +18,8 @@ The GAPbot is a six-legged (hexapod) robotic platform designed for complex, unst
 
 ## AI Acceleration
 * **NPU:** Hailo-8L Neural Processing Unit connected via PCIe.
-* **Throughput:** Delivers real-time inference (e.g., YOLO object detection) with minimal power draw, offloading the CPU entirely for kinematic calculations.
+* **Throughput & Efficiency:** Delivers **26 TOPS** of compute power for real-time inference (e.g., YOLOv8 object detection). Crucially, it operates at an exceptional **TOPS/Watt** efficiency ratio, providing desktop-class AI acceleration with minimal power draw, which is mandatory for sustained battery operation at the edge.
+* **CPU Offloading:** Offloads perception entirely, reserving the CPU for complex neuro-symbolic reasoning and kinematic calculations.
 
 ## Kinematics & Actuation
 * **Servos:** 18 individual high-torque servos (3 per leg).

@@ -31,18 +31,38 @@ By leveraging cutting-edge Edge AI and decentralized swarm robotics, GAP solves 
   <p><i>The Future of Edge AI and Ecological Automation</i></p>
 </div>
 
+
+
+### 🌍 Strategic Verticals
+The GAP ecosystem is architected to address critical challenges across four primary sectors:
+1.  **Industry:** Manufacturing & Heavy Industry optimization.
+2.  **Infrastructure:** Smart Cities & Construction management.
+3.  **Agritech:** Precision Farming & Forestry (Autonomous Ecological Restoration).
+4.  **Emergency Response:** Search, Rescue & Defense applications.
+
+
+### 🔄 The LOOP Method: Our 5-Phase Implementation Plan
+Corax CoLAB operates on a continuous improvement model, ensuring our robotic solutions deliver long-term value (LTV/CAC of 2.9). Our methodology follows a strict 5-phase plan for deploying the GAP ecosystem:
+
+1.  **Phase 1: Deep Tech Consultation & Alignment:** Strategic partnership to define edge AI and Web3 integration requirements for regulatory compliance (e.g., EUDR, CSRD).
+2.  **Phase 2: Digital Twin Simulation:** Utilizing 4D simulation to model complex kinematics and mission parameters before physical deployment, reducing field errors.
+3.  **Phase 3: Edge-First Deployment:** Installing the autonomous GAP drone or GAPbot with local SLAM and Hailo-8 NPU inference, completely independent of cloud architecture.
+4.  **Phase 4: Swarm Intelligence Coordination:** Enabling B.A.T.M.A.N.-adv mesh networking and CBBA task allocation for seamless multi-agent operations.
+5.  **Phase 5: Immutable Audit & LOOP Refinement:** Securing data via Quantum-Resistant Web3 Ledgers and utilizing findings to iteratively optimize ('LOOP') the system's performance and efficiency.
+
 ---
 
 ## 🛠️ Technology Stack
 
 GAP is an **Edge-First** ecosystem. Rather than relying on fragile cloud architectures, our systems execute complex inferences locally, ensuring total operational autonomy even in disconnected, unstructured environments.
 
-### 🦅 Hardware Integration (GAPdrone)
-Our aerial edge unit is built upon industrial-grade, mission-critical hardware:
-*   **Frame:** Holybro X650
-*   **Flight Controller:** Holybro Pixhawk 6C
-*   **Companion Computer:** Raspberry Pi 5
-*   **Edge AI Acceleration:** Hailo-8 NPU (26 TOPS for real-time biological classification)
+### 🦅 Hardware Integration (GAPdrone & GAPbot)
+Our edge units are built upon industrial-grade, mission-critical hardware engineered for high efficiency:
+*   **Companion Computer:** Raspberry Pi 5 (16GB RAM)
+*   **Edge AI Acceleration:** Hailo-8L NPU (**26 TOPS** for ultra-low latency real-time biological classification)
+*   **Efficiency Benchmark:** Industry-leading **TOPS/Watt** ratio, enabling prolonged 'Sun Bathing Mode' and extreme field endurance without thermal throttling or rapid battery depletion.
+*   **Flight Controller (GAPdrone):** Holybro Pixhawk 6C
+*   **Frame (GAPdrone):** Holybro X650
 
 ### 🧠 Software Architecture
 *   **Core Middleware:** Asynchronous **ROS 2 (Humble)** architecture.
