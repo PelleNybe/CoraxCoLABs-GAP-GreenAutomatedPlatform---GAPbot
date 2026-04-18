@@ -1,0 +1,17 @@
+{
+	"name": "GAP Ecosystem (ROS 2 Humble)",
+	"dockerComposeFile": "../docker-compose.yml",
+	"service": "gap_edge_node",
+	"workspaceFolder": "/gap_ws",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-iot.vscode-ros",
+				"ms-vscode.cpptools",
+				"ms-python.python",
+				"twxs.cmake"
+			]
+		}
+	},
+	"remoteUser": "root"
+}
