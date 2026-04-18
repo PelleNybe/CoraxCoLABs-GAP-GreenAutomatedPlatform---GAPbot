@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./assets/hero-gapbot.png" alt="GAP Ecosystem" width="100%" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);" />
+<img src="./assets/GAP_logotype.png" alt="GAP Ecosystem" width="100%" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);" />
 
 # 🚀 Corax CoLAB: Green Automated Platform (GAP)
 **Intelligent Automation for the Physical World**
