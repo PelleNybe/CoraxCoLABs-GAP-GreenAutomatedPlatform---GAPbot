@@ -1,6 +1,12 @@
-MIT License
+# DUAL-LICENSE NOTICE & PROPRIETARY IP DECLARATION
 
-Copyright (c) 2026 Pelle Nyberg / Corax CoLAB
+**Copyright (c) 2026 Corax CoLAB AB.**
+
+The core GAPdrone/GAPbot algorithms, Hailo-8 inference pipelines, Core SLAM algorithms, and Zero-Trust Security modules remain the exclusive proprietary intellectual property of Corax CoLAB AB and are NOT covered by this open-source license. Only the public interfaces, stubs, and documentation within this specific repository are open-sourced under the following MIT License.
+
+---
+
+## MIT License (For Public Interfaces & Documentation Only)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,5 +25,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-<!-- Updated for GAP Ecosystem Showcase -->

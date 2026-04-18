@@ -123,3 +123,38 @@ Retrieve the current operational status of the decentralized B.A.T.M.A.N.-adv me
   ]
 }
 ```
+---
+
+## 4. EUDR 2026 Compliance: Polygon Mapping
+
+Under the strict 2026 EU Deforestation Regulation mandates, any forest or agricultural plot exceeding 4 hectares requires explicit polygon geolocation data rather than a single center-point coordinate. This endpoint allows auditors to extract the cryptographically verified geospatial boundaries mapped by the GAPdrone's LiDAR and Edge AI systems.
+
+### `GET /compliance/eudr/polygon`
+
+**Parameters:**
+*   `plot_id` (string) - The UUID of the assessed terrain plot.
+*   `min_hectares` (integer) - Default: 4. Filter for plots exceeding the EUDR threshold.
+
+**Response (200 OK):**
+```json
+{
+  "status": "success",
+  "eudr_compliant": true,
+  "plot_id": "plot_swe_norra_77",
+  "area_hectares": 12.4,
+  "assessment_timestamp": "2024-04-18T11:45:00Z",
+  "geolocation_data": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [18.0686, 59.3293],
+        [18.0700, 59.3293],
+        [18.0700, 59.3305],
+        [18.0686, 59.3305],
+        [18.0686, 59.3293]
+      ]
+    ]
+  },
+  "cryptographic_ledger_proof": "ipfs://QmYwAPJzv5CZsnA625s3Xf2sm5DcgXU1G6pzX3qQzT2..."
+}
+```
