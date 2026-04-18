@@ -1,0 +1,17 @@
+# PayloadDrop.srv
+# Service definition for triggering the payload release mechanism.
+# This command is sent from the ROS 2 Brain Node to the Actuator interface,
+# ultimately resolving to a VEHICLE_CMD_DO_SET_ACTUATOR MAVLink command via MicroXRCE-DDS.
+
+# Target coordinates for the payload drop
+geometry_msgs/Point target_location
+
+# Type of payload to deploy (e.g., 1 = Seed ball, 2 = Sensor pod)
+uint8 payload_type
+
+---
+# Response indicating success or failure of the release mechanism
+bool success
+
+# Detailed status message or error description
+string message
