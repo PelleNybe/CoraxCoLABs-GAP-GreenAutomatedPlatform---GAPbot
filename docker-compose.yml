@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  gap_edge_node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gap_edge_inference
+    privileged: true
+    network_mode: "host"
+    ipc: "host"
+    pid: "host"
+    devices:
+      # Expose Hailo-8 NPU to the container
+      - "/dev/hailo0:/dev/hailo0"
+      # Expose UART for MicroXRCE-DDS to Pixhawk
+      - "/dev/ttyAMA0:/dev/ttyAMA0"
+      # Expose Camera/LiDAR interfaces
+      - "/dev/video0:/dev/video0"
+    environment:
+      - ROS_DOMAIN_ID=42
+      - HAILO_LOG_DIR=/tmp/hailo_logs
+    volumes:
+      # Mount external storage for local SQLite logs / Audit Ledger
+      - ./logs:/var/log/gap_ecosystem
+    command: >
+      bash -c "
+      MicroXRCEAgent serial --dev /dev/ttyAMA0 -b 921600 &
+      ros2 run demo_nodes_cpp talker
+      "
+    restart: unless-stopped

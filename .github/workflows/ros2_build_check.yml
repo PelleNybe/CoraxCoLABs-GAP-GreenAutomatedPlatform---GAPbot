@@ -1,0 +1,41 @@
+name: ROS 2 Humble Build & Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        ros_distribution: [humble]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup ROS 2 ${{ matrix.ros_distribution }}
+      uses: ros-tooling/setup-ros@v0.7
+      with:
+        required-ros-distributions: ${{ matrix.ros_distribution }}
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-colcon-common-extensions python3-rosdep
+        rosdep update
+        rosdep install --from-paths . --ignore-src -r -y --rosdistro ${{ matrix.ros_distribution }}
+
+    - name: Build Workspace
+      run: |
+        source /opt/ros/${{ matrix.ros_distribution }}/setup.bash
+        colcon build --packages-select public_interfaces
+
+    - name: Run Tests
+      run: |
+        source /opt/ros/${{ matrix.ros_distribution }}/setup.bash
+        source install/setup.bash
+        colcon test --packages-select public_interfaces
+        colcon test-result --all

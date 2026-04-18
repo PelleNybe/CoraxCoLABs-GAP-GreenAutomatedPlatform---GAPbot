@@ -1,0 +1,33 @@
+name: Code Quality & Linting
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  ament_lint:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup ROS 2 Humble
+      uses: ros-tooling/setup-ros@v0.7
+      with:
+        required-ros-distributions: humble
+
+    - name: Install Linting Tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          ros-humble-ament-lint-auto \
+          ros-humble-ament-cmake-cppcheck \
+          ros-humble-ament-cmake-cpplint \
+          ros-humble-ament-cmake-flake8 \
+          ros-humble-ament-cmake-pep257
+
+    - name: Run Ament Linters
+      run: |
+        source /opt/ros/humble/setup.bash
+        colcon test --packages-select public_interfaces --executor sequential --event-handlers console_direct+ --pytest-args -m linter
