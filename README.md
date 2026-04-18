@@ -35,10 +35,30 @@ By leveraging cutting-edge Edge AI and decentralized swarm robotics, GAP solves 
 
 ### 🌍 Strategic Verticals
 The GAP ecosystem is architected to address critical challenges across four primary sectors:
-1.  **Industry:** Manufacturing & Heavy Industry optimization.
-2.  **Infrastructure:** Smart Cities & Construction management.
-3.  **Agritech:** Precision Farming & Forestry (Autonomous Ecological Restoration).
-4.  **Emergency Response:** Search, Rescue & Defense applications.
+
+<details open>
+<summary><b>🏭 Industry: Manufacturing & Heavy Industry</b></summary>
+<br>
+Driving the transition towards <strong>Industry 5.0</strong> and circular factories, the GAP platform integrates cyber-secure Edge AI and <strong>Zero-Trust architecture</strong> to enable real-time decision support and resilient automation. By processing high-bandwidth sensor data directly on the Hailo-8 NPU, the system provides instantaneous anomaly detection and operational telemetry, optimizing heavy manufacturing workflows without relying on vulnerable cloud uplinks.
+</details>
+
+<details open>
+<summary><b>🌉 Infrastructure: Smart Cities & Energy</b></summary>
+<br>
+Ensuring societal resilience and a robust energy supply, GAP facilitates autonomous infrastructure inspections across critical assets like power grids and pipelines. Utilizing advanced sensor fusion—combining 3D-LiDAR and thermal imaging—the swarm rapidly assesses structural integrity and storm damage. This immediate, high-fidelity data acquisition eliminates human risk in hazardous environments and accelerates disaster recovery.
+</details>
+
+<details open>
+<summary><b>🛡️ Emergency Response: Dual-Use & Defense</b></summary>
+<br>
+Engineered for <strong>Dual-Use</strong> applications, GAP provides tactical superiority in protecting critical civil infrastructure. Our decentralized <strong>B.A.T.M.A.N.-adv mesh network</strong> ensures uninterrupted swarm communication and coordination in GPS-denied, electronically jammed, or communication-compromised environments. This robust topology is mission-critical for Search-and-Rescue (SAR) operations, disaster management, and complex defense scenarios where traditional comms fail.
+</details>
+
+<details open>
+<summary><b>🌲 Agritech: Precision Forestry & Ecological Restoration</b></summary>
+<br>
+At its core, GAP revolutionizes Precision Forestry and autonomous ecological restoration. The drone swarm executes targeted biological interventions, such as autonomous seed pod deployment via precision servos. Crucially, the platform guarantees <strong>EUDR first-mile traceability</strong>, generating immutable polygon mapping for plots exceeding 4 hectares and anchoring this geospatial intelligence directly to Web3 Audit Ledgers for absolute regulatory compliance.
+</details>
 
 
 ### 🔄 The LOOP Method: Our 5-Phase Implementation Plan
