@@ -52,12 +52,24 @@ Ensuring societal resilience and a robust energy supply, GAP facilitates autonom
 <summary><b>🛡️ Emergency Response: Dual-Use & Defense</b></summary>
 <br>
 Engineered for <strong>Dual-Use</strong> applications, GAP provides tactical superiority in protecting critical civil infrastructure. Our decentralized <strong>B.A.T.M.A.N.-adv mesh network</strong> ensures uninterrupted swarm communication and coordination in GPS-denied, electronically jammed, or communication-compromised environments. This robust topology is mission-critical for Search-and-Rescue (SAR) operations, disaster management, and complex defense scenarios where traditional comms fail.
+
+<br>
+<div align="center">
+  <img src="./assets/GAPdrone_forest_fire_detection.webp" alt="GAPdrone forest fire detection" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
+  <p><i>Thermal and visual monitoring for disaster mitigation and emergency response</i></p>
+</div>
 </details>
 
 <details open>
 <summary><b>🌲 Agritech: Precision Forestry & Ecological Restoration</b></summary>
 <br>
 At its core, GAP revolutionizes Precision Forestry and autonomous ecological restoration. The drone swarm executes targeted biological interventions, such as autonomous seed pod deployment via precision servos. Crucially, the platform guarantees <strong>EUDR first-mile traceability</strong>, generating immutable polygon mapping for plots exceeding 4 hectares and anchoring this geospatial intelligence directly to Web3 Audit Ledgers for absolute regulatory compliance.
+
+<br>
+<div align="center">
+  <img src="./assets/GAPbot_unstructured_forest.webp" alt="GAPbot navigating unstructured forest" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
+  <p><i>GAPbot autonomously navigating unstructured biological terrain</i></p>
+</div>
 </details>
 
 <details open>
@@ -76,12 +88,24 @@ Ensuring societal resilience and a robust energy supply, GAP facilitates autonom
 <summary><b>🌲 Agritech: Precision Forestry & Ecological Restoration</b></summary>
 <br>
 At its core, GAP revolutionizes Precision Forestry and autonomous ecological restoration. The drone swarm executes targeted biological interventions, such as autonomous seed pod deployment via precision servos. Crucially, the platform guarantees <strong>EUDR first-mile traceability</strong>, generating immutable polygon mapping for plots exceeding 4 hectares and anchoring this geospatial intelligence directly to Web3 Audit Ledgers for absolute regulatory compliance.
+
+<br>
+<div align="center">
+  <img src="./assets/GAPbot_unstructured_forest.webp" alt="GAPbot navigating unstructured forest" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
+  <p><i>GAPbot autonomously navigating unstructured biological terrain</i></p>
+</div>
 </details>
 
 <details open>
 <summary><b>🛡️ Emergency Response: Dual-Use & Defense</b></summary>
 <br>
 Engineered for <strong>Dual-Use</strong> applications, GAP provides tactical superiority in protecting critical civil infrastructure. Our decentralized <strong>B.A.T.M.A.N.-adv mesh network</strong> ensures uninterrupted swarm communication and coordination in GPS-denied, electronically jammed, or communication-compromised environments. This robust topology is mission-critical for Search-and-Rescue (SAR) operations, disaster management, and complex defense scenarios where traditional comms fail.
+
+<br>
+<div align="center">
+  <img src="./assets/GAPdrone_forest_fire_detection.webp" alt="GAPdrone forest fire detection" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
+  <p><i>Thermal and visual monitoring for disaster mitigation and emergency response</i></p>
+</div>
 </details>
 
 
@@ -101,6 +125,11 @@ Corax CoLAB operates on a continuous improvement model, ensuring our robotic sol
 2.  **Phase 2: Digital Twin Simulation:** Utilizing 4D simulation to model complex kinematics and mission parameters before physical deployment, reducing field errors.
 3.  **Phase 3: Edge-First Deployment:** Installing the autonomous GAP drone or GAPbot with local SLAM and Hailo-8 NPU inference, completely independent of cloud architecture.
 4.  **Phase 4: Swarm Intelligence Coordination:** Enabling B.A.T.M.A.N.-adv mesh networking and CBBA task allocation for seamless multi-agent operations.
+    <br>
+    <div align="center">
+      <img src="./assets/GAPdrone_swarm.webp" alt="GAPdrone Swarm Intelligence" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px; margin-top: 10px;" />
+      <p><i>Decentralized B.A.T.M.A.N.-adv mesh networking enabling multi-agent coordination</i></p>
+    </div>
 5.  **Phase 5: Immutable Audit & LOOP Refinement:** Securing data via Quantum-Resistant Web3 Ledgers and utilizing findings to iteratively optimize ('LOOP') the system's performance and efficiency.
 
 ---
