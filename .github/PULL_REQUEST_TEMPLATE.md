@@ -1,23 +1,20 @@
 ## Description
-<!-- Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. -->
+<!-- Describe your changes in detail -->
+<!-- Ensure you adhere to the guidelines in AGENTS.md (e.g., NO proprietary IP) -->
 
-Fixes # (issue)
+## Related Issue
+<!-- If fixing a bug or resolving a feature request, link to the issue here -->
+Fixes # (issue number)
 
-## Type of change
-<!-- Please delete options that are not relevant. -->
-- [ ] Bug fix (non-breaking change which fixes an issue)
-- [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] This change requires a documentation update
+## Motivation and Context
+<!-- Why is this change required? What problem does it solve? -->
 
 ## How Has This Been Tested?
-<!-- Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. -->
-- [ ] Tested locally on Mission Control (React/Vite)
-- [ ] Tested on GAPbot Hardware (Raspberry Pi/Hailo)
+<!-- Please describe in detail how you tested your changes. -->
+<!-- Include details of your testing environment, and the tests you ran to -->
+<!-- see how your change affects other areas of the code, etc. -->
+- [ ] Built workspace via `colcon build --packages-select public_interfaces`
+- [ ] Linters passed (`ament_lint`)
+- [ ] Documentation updated to reflect changes
 
-## Checklist:
-- [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings (ESLint/PEP 8)
+## Screenshots (if appropriate):
