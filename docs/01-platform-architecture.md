@@ -20,10 +20,10 @@ Unlike traditional cloud-dependent IoT systems, GAP processes critical data loca
 ## 2. Cloud Synchronization
 When an internet connection is established, the `Sync Service` (`/gap/cloud_monitor`) quietly wakes up in the background. It securely pushes batched updates from the local SQLite database to the cloud orchestrator (Supabase). This ensures the central Mission Control dashboard is updated without interrupting real-time physical operations.
 
-## 3. Web3 Audit Ledger (Data Integrity)
-In sectors like industrial agriculture and forestry, data integrity is critical. We utilize a cryptographic Web3 Audit Ledger.
-* Critical events (mode changes, safety stops, environmental anomalies) are cryptographically signed and verifiable via the `AuditLedger` component in the Mission Control frontend.
-* We utilize quantum-resistant algorithms (like Falcon/Kyber via `liboqs-python`) to future-proof the integrity of the data stream.
+## 3. Web3 Audit Ledger & Zero-Trust Architecture
+In sectors like industrial agriculture and forestry, data integrity is critical. We utilize a cryptographic Web3 Audit Ledger integrated with our Zero-Trust architecture.
+*   **Immutable Tracking:** Critical events (mode changes, safety stops, environmental anomalies) are cryptographically signed and verifiable via the `AuditLedger` component in the Mission Control frontend. This creates a transparent 'first-mile traceability' record.
+*   **Quantum-Resistant Cryptography:** We utilize advanced algorithms (like Falcon/Kyber via `liboqs-python`) to future-proof the integrity of the decentralized data stream against emerging computational threats.
 
 ## 4. Modern Mission Control
 The nervous system of the GAP ecosystem is the modern React/Vite-based Mission Control dashboard. It translates high-level human goals into actionable robotic commands and visualizes the bot's state in real-time. Key frontend features include:
