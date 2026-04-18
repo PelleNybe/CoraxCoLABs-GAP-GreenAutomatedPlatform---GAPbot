@@ -1,0 +1,19 @@
+Här är en tydlig sammanställning i klartext över de användningsområden jag hittade i dokumentationen:
+
+**GAP (Green Automated Platform - Det övergripande ekosystemet)**
+*   **Miljöåterställning:** Storskalig, automatiserad biologisk och ekologisk återställning i naturen.
+*   **Precisionsjordbruk (AgTech):** Optimering av resursflöden och avancerad dataanalys för jordbruk.
+*   **Offline-Autonomi:** Möjliggör full autonomi i avlägsna områden utan internet genom lokala AI-beräkningar ("Edge-First") och decentraliserade mesh-nätverk (B.A.T.M.A.N.-adv).
+*   **Säker Dataloggning:** Decentraliserad och säker hantering av händelser via en Web3 Audit Ledger och kvantresistent kryptografi.
+
+**GAPbot (Den markgående hexapoden)**
+*   **Extrem Terrängnavigering:** Förflyttning och uppdrag i ostrukturerade miljöer där vanliga robotar (med hjul eller band) inte kan ta sig fram.
+*   **Markbaserad Datainsamling:** Fungerar som en mobil sensormatris för att utvärdera biologiska och miljömässiga förhållanden direkt på marknivå.
+*   **Realtidsanalys av miljö:** Identifierar växter, objekt och biologiska avvikelser i realtid via sina kameror och inbyggda NPU (Hailo-8L).
+*   **Precisionskartering (3D):** Skapar exakta 3D-punktmoln av omgivningen (LiDAR-SLAM) med centimeternoggrannhet via RTK-GPS.
+
+**GAPdrone (Den luftburna Edge AI-drönaren)**
+*   **Flygburen Miljöintervention:** Utför fysiska insatser från luften, till exempel genom att fälla nyttolaster (som fröbomber för ekologisk återställning) via sin servostyrda mekanism.
+*   **Avancerad Spektralanalys:** Bearbetar tunga multispektrala bildströmmar (RGB + NIR) lokalt under flygning för att analysera vegetation (t.ex. NDVI) och hitta anomalier.
+*   **Luftburen 3D-kartering:** Utför LiDAR-SLAM för extremt detaljerad rums- och terrängskanning ovanifrån, vilket fungerar även i miljöer utan GPS-signal.
+*   **Svärmkoordination:** Kommunicerar kontinuerligt ner till GAPbot (och andra enheter) via mesh-nätverket för att delge AI-insikter och terrängdata, vilket snabbar på hela systemets karta och uppdrag.

@@ -1,40 +1,40 @@
-# Contributing to Corax CoLAB's GAP & GAPbot
+# Contributing to Corax CoLAB's GAP Ecosystem
 
-First off, thank you for considering contributing to the Green Automated Platform (GAP)! It's people like you that make the open source community such an incredible place to learn, inspire, and create.
+First off, thank you for considering contributing to the Green Automated Platform (GAP)! We are excited to collaborate with the open-source community, hardware sponsors, and deep-tech enthusiasts to build the future of Edge-First AI and Autonomous Robotics.
 
-We welcome contributions of all kinds from anyone.
+By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## 🚀 How Can I Contribute?
 
-### Reporting Bugs
-If you find a bug, please create an issue and include:
-* A clear and descriptive title.
-* The exact steps to reproduce the issue.
-* What you expected to happen vs what actually happened.
-* Your environment (OS, Node version, Python version, etc.).
+### 1. Hardware Integration & Testing
+We are actively seeking feedback and optimizations for our hardware stack:
+*   **Raspberry Pi 5 & Hailo-8L:** Help us optimize AI inference pipelines and power management (e.g., BEC configurations).
+*   **Pixhawk 6C & PX4:** Contribute to ROS 2 / MicroXRCE-DDS bridge stability and custom MAVLink messages.
 
-### Suggesting Enhancements
-Enhancement suggestions are tracked as GitHub issues. When creating an enhancement issue, please provide:
-* A detailed description of the proposed functionality.
-* The reason why this enhancement would be useful to most users.
-* Potential implementation details or pseudocode if applicable.
+### 2. Documentation and CAD
+*   Improve existing architectural diagrams (Mermaid.js) and technical documentation.
+*   Submit improvements or variants to our `/cad` models, such as the `payload_dropper`.
 
-### Pull Requests
-We actively welcome your pull requests!
-1. Fork the repo and create your branch from `main`.
-2. If you've added code that should be tested, add tests.
-3. Ensure the test suite passes (if applicable).
-4. Update the documentation to reflect any changes.
-5. Ensure your code lints properly.
-6. Issue that pull request!
+### 3. Reporting Bugs
+If you find a bug in the documentation, build scripts, or provided code snippets, please open an Issue:
+*   Use a clear and descriptive title.
+*   Provide the exact steps to reproduce the issue.
+*   Include your environment details (OS, ROS 2 version, Hardware setup).
+
+### 4. Pull Requests
+We welcome Draft Pull Requests (PRs) for all changes!
+1.  Fork the repo and create your branch from `main`.
+2.  Ensure your code/documentation adheres to the guidelines in `AGENTS.md`.
+3.  **Important:** This is a public showcase repository. **DO NOT** submit proprietary business logic, trained custom ML models, or core SLAM algorithms.
+4.  If applicable, provide a single, easy command to test your changes (e.g., `colcon build --packages-select <pkg_name>`).
+5.  Submit your PR as a **Draft** for review by the Corax CoLAB team.
 
 ## 🧑‍💻 Code Style
-* For the **Mission Control Dashboard** (React/TypeScript), we use ESLint. Please ensure your code conforms to the standard configuration by running `npm run lint`.
-* For **Python** related additions, follow PEP 8 standards.
+*   **Mission Control Dashboard (React/TypeScript):** We use ESLint. Ensure your code conforms by running `npm run lint`.
+*   **Python:** Follow PEP 8 standards.
+*   **C++:** Follow the standard ROS 2 C++ style guide.
 
-## 🤝 Community
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
-
-If you want to discuss the project, reach out to Pelle Nyberg on [LinkedIn](https://www.linkedin.com/in/pellenyberg/).
-
-<!-- Updated for GAP Ecosystem Showcase -->
+## 🤝 Contact
+For partnerships, hardware sponsorships, or deep-tech investment inquiries, please reach out to **Pelle Nyberg**:
+*   [LinkedIn](https://www.linkedin.com/in/pellenyberg/)
+*   [Corax CoLAB Website](https://coraxcolab.com)
