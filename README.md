@@ -22,7 +22,7 @@
 
 ## 🌟 Vision & Use Case
 
-At **[Corax CoLAB](https://coraxcolab.com)**, we are pioneering the intersection of Deep Tech, biological reality, and autonomous robotics. The **Green Automated Platform (GAP)** ecosystem is engineered to execute **Autonomous Ecological Restoration** and **Precision Forestry** at an unprecedented scale.
+At **[Corax CoLAB](https://coraxcolab.com)**, we are pioneering the intersection of Deep Tech, biological reality, and autonomous robotics. The **Green Automated Platform (GAP)** ecosystem is engineered to execute **Autonomous Ecological Restoration** and **Precision Forestry** at an unprecedented scale. By deploying swarms with a **"high degree of autonomy"** (*hög grad av autonomi*), the GAP ecosystem is designed to mitigate environmental risks and actively contribute to a **"safer society"** (*ett säkrare samhälle*).
 
 By leveraging cutting-edge Edge AI and decentralized swarm robotics, GAP solves the critical challenge of **"first-mile traceability"** for the **EU Deforestation Regulation (EUDR)**. Our platform ensures verifiable, immutable environmental impact data through the integration of **Web3 Audit Ledgers** and advanced Edge AI telemetry.
 

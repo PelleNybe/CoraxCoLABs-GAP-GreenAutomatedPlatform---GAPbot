@@ -6,7 +6,7 @@ This manifesto outlines the foundational design philosophies that govern the dev
 
 ## 1. Decentralized Swarm Robotics
 
-The future of environmental intervention is not a single, monolithic machine, but a coordinated swarm. We reject cloud-dependent architectures that become inert when connectivity drops.
+The future of environmental intervention is not a single, monolithic machine, but a coordinated swarm possessing a **high degree of autonomy** (*hög grad av autonomi*). We reject cloud-dependent architectures that become inert when connectivity drops.
 
 *   **Infrastructure-less Operations:** We utilize the B.A.T.M.A.N.-adv mesh protocol to create dynamic, self-healing networks between aerial (GAPdrone) and ground (GAPbot) units.
 *   **Edge-First Inference:** Complex AI models (YOLOv8, SLAM) execute entirely on local hardware accelerators (Hailo-8). The cloud is for historical logging, not real-time critical path operations.
@@ -27,7 +27,7 @@ While we currently leverage exceptional hardware like the Holybro Pixhawk 6C and
 
 ## 4. Dual-Use by Design
 
-The mechanisms we build for ecological restoration possess inherent capabilities for tactical deployment.
+The mechanisms we build for ecological restoration possess inherent capabilities for tactical deployment, contributing fundamentally to a **safer society** (*ett säkrare samhälle*).
 
 *   **Robust Actuation:** The payload release mechanisms utilized on the GAPdrone are engineered for absolute reliability, whether deploying specialized seed-pods for reforestation or environmental sensor arrays.
 *   **Precision Engineering:** Our structural interfaces are designed for rapid iteration and resilience, prioritizing function and survivability in hostile environments.
