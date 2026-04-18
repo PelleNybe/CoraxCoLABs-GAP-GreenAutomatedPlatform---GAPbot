@@ -49,17 +49,26 @@ Ensuring societal resilience and a robust energy supply, GAP facilitates autonom
 </details>
 
 <details open>
-<summary><b>🛡️ Emergency Response: Dual-Use & Defense</b></summary>
-<br>
-Engineered for <strong>Dual-Use</strong> applications, GAP provides tactical superiority in protecting critical civil infrastructure. Our decentralized <strong>B.A.T.M.A.N.-adv mesh network</strong> ensures uninterrupted swarm communication and coordination in GPS-denied, electronically jammed, or communication-compromised environments. This robust topology is mission-critical for Search-and-Rescue (SAR) operations, disaster management, and complex defense scenarios where traditional comms fail.
-</details>
-
-<details open>
 <summary><b>🌲 Agritech: Precision Forestry & Ecological Restoration</b></summary>
 <br>
 At its core, GAP revolutionizes Precision Forestry and autonomous ecological restoration. The drone swarm executes targeted biological interventions, such as autonomous seed pod deployment via precision servos. Crucially, the platform guarantees <strong>EUDR first-mile traceability</strong>, generating immutable polygon mapping for plots exceeding 4 hectares and anchoring this geospatial intelligence directly to Web3 Audit Ledgers for absolute regulatory compliance.
 </details>
 
+<details open>
+<summary><b>🛡️ Emergency Response: Dual-Use & Defense</b></summary>
+<br>
+Engineered for <strong>Dual-Use</strong> applications, GAP provides tactical superiority in protecting critical civil infrastructure. Our decentralized <strong>B.A.T.M.A.N.-adv mesh network</strong> ensures uninterrupted swarm communication and coordination in GPS-denied, electronically jammed, or communication-compromised environments. This robust topology is mission-critical for Search-and-Rescue (SAR) operations, disaster management, and complex defense scenarios where traditional comms fail.
+</details>
+
+
+
+### ⚡ Core Capabilities
+The GAP ecosystem is built upon our foundational pillars that ensure operational excellence and technological superiority:
+
+*   **Green Tech & Consulting:** Harmonizing biological requirements with automated systems.
+*   **AI & Automation:** Neuro-symbolic hybrid-AI, Edge inference, and autonomous navigation.
+*   **Blockchain & Web3:** Quantum-resistant audit ledgers for immutable telemetry and EUDR compliance.
+*   **Security & Compliance:** Zero-Trust architecture ensuring data integrity from the edge to the node.
 
 ### 🔄 The LOOP Method: Our 5-Phase Implementation Plan
 Corax CoLAB operates on a continuous improvement model, ensuring our robotic solutions deliver long-term value (LTV/CAC of 2.9). Our methodology follows a strict 5-phase plan for deploying the GAP ecosystem:
@@ -83,6 +92,12 @@ Our edge units are built upon industrial-grade, mission-critical hardware engine
 *   **Efficiency Benchmark:** Industry-leading **TOPS/Watt** ratio, enabling prolonged 'Sun Bathing Mode' and extreme field endurance without thermal throttling or rapid battery depletion.
 *   **Flight Controller (GAPdrone):** Holybro Pixhawk 6C
 *   **Frame (GAPdrone):** Holybro X650
+
+#### Performance Benchmark: Edge vs. Cloud
+| Architecture | Accelerator | Performance | Latency | Efficiency (TOPS/Watt) |
+| :--- | :--- | :--- | :--- | :--- |
+| **GAPbot - Local Edge** | Hailo-8L NPU (PCIe) | 26 TOPS | < 5 ms | Ultra-High |
+| **Traditional Cloud** | Remote GPU Array | High | > 100 ms | Low (Network Dependent) |
 
 ### 🧠 Software Architecture
 *   **Core Middleware:** Asynchronous **ROS 2 (Humble)** architecture.
