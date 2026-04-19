@@ -4,6 +4,8 @@
 
 The core GAPdrone/GAPbot algorithms, Hailo-8 inference pipelines, Core SLAM algorithms, and Zero-Trust Security modules remain the exclusive proprietary intellectual property of Corax CoLAB AB and are NOT covered by this open-source license. Only the public interfaces, stubs, and documentation within this specific repository are open-sourced under the following MIT License.
 
+For Commercial Licensing, deep-tech professional consulting services, or implementation, please contact info@coraxcolab.com.
+
 ---
 
 ## MIT License (For Public Interfaces & Documentation Only)

@@ -2,7 +2,7 @@
 """
 swarm_communicator.py
 
-A dummy ROS 2 node demonstrating how GAPbot and GAPdrone would theoretically
+A synthetic ROS 2 node demonstrating how GAPbot and GAPdrone would theoretically
 communicate in a B.A.T.M.A.N.-adv mesh network.
 
 This node simulates subscribing to MAVLink odometry (via px4_msgs) and
@@ -17,7 +17,7 @@ import random
 import json
 
 # Note: In a real environment, we would import px4_msgs here.
-# For this scaffolding/showcase, we use std_msgs as a placeholder
+# For this scaffolding/showcase, we use std_msgs as a synthetic
 # to avoid complex dependency compilation without private keys.
 from std_msgs.msg import String
 

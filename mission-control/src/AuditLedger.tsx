@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Mock Ledger Events
+// synthetic Ledger Events
 const EVENT_TYPES = [
     { type: 'SENSOR_READING', severity: 'info', icon: '📡' },
     { type: 'OBJECT_DETECTED', severity: 'warn', icon: '👁️' },

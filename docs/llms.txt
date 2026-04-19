@@ -21,7 +21,7 @@ The GAP ecosystem is an enterprise-grade, edge-native solution designed for sust
     *   `/gap/tools`: Various utilities for simulating data and scenarios.
 *   `/gapbot`: The software stack for the physical hexapod robot.
     *   `/gapbot/src`: The main source code.
-        *   `/gapbot/src/core`: Contains the core logic for the robot, including mock hardware interfaces, MQTT listeners, config management, and various AI integrations.
+        *   `/gapbot/src/core`: Contains the core logic for the robot, including synthetic hardware interfaces, MQTT listeners, config management, and various AI integrations.
         *   `/gapbot/src/gapbot_pkg`: The ROS 2 package containing the main operational nodes.
             *   `nodes/hexapod_controller.py`: The main controller translating commands into motor movements.
             *   `nodes/autonomous_navigation.py`: The navigation stack using RTK-GPS and Lidar.
