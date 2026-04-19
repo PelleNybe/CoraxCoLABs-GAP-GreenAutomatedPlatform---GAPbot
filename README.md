@@ -1,165 +1,97 @@
 <div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=129532&height=150&section=header&text=Green%20Automated%20Platform%20(GAP)&fontSize=40&fontAlignY=35&desc=Autonomous%20Ecosystem%20for%20a%20Safer%20Society&descAlignY=55&descAlign=50" width="100%"/>
+</div>
 
-<img src="./assets/GAP_logotype.png" alt="GAP Ecosystem" width="100%" style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);" />
+<div align="center">
 
-# 🚀 Corax CoLAB: Green Automated Platform (GAP)
-**Intelligent Automation for the Physical World**
+# Green Automated Platform (GAP)
 
-[![ROS 2 Humble](https://img.shields.io/badge/ROS_2-Humble-22314E?style=for-the-badge&logo=ros&logoColor=white)](https://docs.ros.org/en/humble/index.html)
-[![Hailo-8 NPU](https://img.shields.io/badge/Hailo--8_NPU-Edge_AI-000000?style=for-the-badge)](https://hailo.ai/)
-[![Python 3.10](https://img.shields.io/badge/Python-3.10-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![MicroXRCE-DDS](https://img.shields.io/badge/MicroXRCE--DDS-Bridge-00599C?style=for-the-badge)](https://micro-xrce-dds.docs.eprosima.com/)
-[![License: Dual](https://img.shields.io/badge/License-Dual_License-yellow.svg?style=for-the-badge)](#)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg?style=for-the-badge)](https://github.com/PelleNybe/GAP-ecosystem/actions)
+[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/PelleNybe/gap)
+[![ROS 2](https://img.shields.io/badge/ROS_2-Humble%20%7C%20Jazzy-22314E?style=for-the-badge&logo=ros&logoColor=white)](https://docs.ros.org/en/humble/index.html)
+[![Edge AI](https://img.shields.io/badge/Edge_AI-Hailo--8-FF4F00?style=for-the-badge&logo=linux&logoColor=white)](https://hailo.ai/)
+[![Web3](https://img.shields.io/badge/Ledger-Web3_Audit-8A2BE2?style=for-the-badge&logo=web3dotjs&logoColor=white)](https://cryptop.coraxcolab.com)
+[![License: Dual](https://img.shields.io/badge/License-Dual_License-blue?style=for-the-badge)](./LICENSE)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=129532&center=true&vCenter=true&width=800&lines=Autonomous+Ecological+Restoration;Precision+Forestry+%26+Deep+Tech;EUDR+First-Mile+Traceability;Zero-Trust+Swarm+Robotics)](https://git.io/typing-svg)
+**Enabling a 'high degree of autonomy' (hög grad av autonomi) for a 'safer society' (ett säkrare samhälle).**
 
-*Welcome to the definitive public architectural showcase of the **Green Automated Platform (GAP)**.*
+</div>
 
+<br/>
+
+## 💎 Project Philosophy: Open Core & Commercial Licensing
+
+This repository serves as a **limited 'Source-Available' showcase** intended strictly for research, education, architectural overview, and technical demonstration.
+
+The full, production-ready Green Automated Platform (GAP)—featuring advanced **MANET mesh failover**, **3D volumetric mapping**, and complete **EUDR API integration**—is a proprietary enterprise product developed by Corax CoLAB AB.
+
+<details open>
+<summary><b>Licensing Notice</b></summary>
+<br>
+This project utilizes a <strong>Dual-License structure</strong>:
+<ul>
+  <li><strong>Proprietary Components:</strong> Core SLAM algorithms, Zero-Trust security handshakes, trained ML models (e.g., custom YOLO weights), and proprietary business logic are strictly protected under <strong>Copyright (c) 2026 Corax CoLAB AB</strong>.</li>
+  <li><strong>Public Interfaces:</strong> Documentation and public interface stubs available in this repository are licensed under a permissive <strong>MIT License</strong>.</li>
+</ul>
+</details>
+
+<br/>
+
+<div align="center" style="background-color: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333;">
+  <h3>🚀 Ready for Enterprise Deployment?</h3>
+  <p>Commercial entities, enterprise partners, and investors looking for licensing, deep-tech consulting, or implementation services are encouraged to reach out.</p>
+  <a href="mailto:info@coraxcolab.com"><img src="https://img.shields.io/badge/Contact-info@coraxcolab.com-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" alt="Email Us"></a>
+  <a href="https://coraxcolab.com"><img src="https://img.shields.io/badge/Website-coraxcolab.com-22314E?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>
 </div>
 
 ---
 
-## 🌟 Vision & Use Case
+## 🏛️ System Architecture
 
-At **[Corax CoLAB](https://coraxcolab.com)**, we are pioneering the intersection of Deep Tech, biological reality, and autonomous robotics. The **Green Automated Platform (GAP)** ecosystem is engineered to execute **Autonomous Ecological Restoration** and **Precision Forestry** at an unprecedented scale. By deploying swarms with a **"high degree of autonomy"**, the GAP ecosystem is designed to mitigate environmental risks and actively contribute to a **"safer society"**.
-
-By leveraging cutting-edge Edge AI and decentralized swarm robotics, GAP solves the critical challenge of **"first-mile traceability"** for the **EU Deforestation Regulation (EUDR)**. Our platform ensures verifiable, immutable environmental impact data through the integration of **Web3 Audit Ledgers** and advanced Edge AI telemetry.
+Our 'Edge-First' decentralized architecture leverages real-time AI inference locally via Hailo-8L NPUs to maintain true offline autonomy.
 
 <div align="center">
-  <img src="./assets/ai-concept.png" alt="GAP AI Concept" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
-  <p><i>The Future of Edge AI and Ecological Automation</i></p>
+  <img src="./assets/architecture_placeholder.png" alt="System Architecture" width="90%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15);" />
+  <p><i>The GAP Ecosystem Architecture: Highlighting the data flow from Edge Sensors to Web3 Audit Ledgers.</i></p>
 </div>
 
-
-
-### 🌍 Strategic Verticals
-The GAP ecosystem is architected to address critical challenges across four primary sectors:
-
-<details open>
-<summary><b>🏭 Industry: Manufacturing & Heavy Industry</b></summary>
-<br>
-Driving the transition towards <strong>Industry 5.0</strong> and circular factories, the GAP platform integrates cyber-secure Edge AI and <strong>Zero-Trust architecture</strong> to enable real-time decision support and resilient automation. By processing high-bandwidth sensor data directly on the Hailo-8 NPU, the system provides instantaneous anomaly detection and operational telemetry, optimizing heavy manufacturing workflows without relying on vulnerable cloud uplinks.
-</details>
-
-<details open>
-<summary><b>🌉 Infrastructure: Smart Cities & Energy</b></summary>
-<br>
-Ensuring societal resilience and a robust energy supply, GAP facilitates autonomous infrastructure inspections across critical assets like power grids and pipelines. Utilizing advanced sensor fusion—combining 3D-LiDAR and thermal imaging—the swarm rapidly assesses structural integrity and storm damage. This immediate, high-fidelity data acquisition eliminates human risk in hazardous environments and accelerates disaster recovery.
-</details>
-
-<details open>
-<summary><b>🛡️ Emergency Response: Dual-Use & Defense</b></summary>
-<br>
-Engineered for <strong>Dual-Use</strong> applications, GAP provides tactical superiority in protecting critical civil infrastructure. Our decentralized <strong>B.A.T.M.A.N.-adv mesh network</strong> ensures uninterrupted swarm communication and coordination in GPS-denied, electronically jammed, or communication-compromised environments. This robust topology is mission-critical for Search-and-Rescue (SAR) operations, disaster management, and complex defense scenarios where traditional comms fail.
-
-<br>
-<div align="center">
-  <img src="./assets/GAPdrone_forest_fire_detection.webp" alt="GAPdrone forest fire detection" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
-  <p><i>Thermal and visual monitoring for disaster mitigation and emergency response</i></p>
-</div>
-</details>
-
-<details open>
-<summary><b>🌲 Agritech: Precision Forestry & Ecological Restoration</b></summary>
-<br>
-At its core, GAP revolutionizes Precision Forestry and autonomous ecological restoration. The drone swarm executes targeted biological interventions, such as autonomous seed pod deployment via precision servos. Crucially, the platform guarantees <strong>EUDR first-mile traceability</strong>, generating immutable polygon mapping for plots exceeding 4 hectares and anchoring this geospatial intelligence directly to Web3 Audit Ledgers for absolute regulatory compliance.
-
-<br>
-<div align="center">
-  <img src="./assets/GAPbot_unstructured_forest.webp" alt="GAPbot navigating unstructured forest" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
-  <p><i>GAPbot autonomously navigating unstructured biological terrain</i></p>
-</div>
-</details>
-
-<details open>
-<summary><b>🏭 Industry: Manufacturing & Heavy Industry</b></summary>
-<br>
-Driving the transition towards <strong>Industry 5.0</strong> and circular factories, the GAP platform integrates cyber-secure Edge AI and <strong>Zero-Trust architecture</strong> to enable real-time decision support and resilient automation. By processing high-bandwidth sensor data directly on the Hailo-8 NPU, the system provides instantaneous anomaly detection and operational telemetry, optimizing heavy manufacturing workflows without relying on vulnerable cloud uplinks.
-</details>
-
-<details open>
-<summary><b>🌉 Infrastructure: Smart Cities & Energy</b></summary>
-<br>
-Ensuring societal resilience and a robust energy supply, GAP facilitates autonomous infrastructure inspections across critical assets like power grids and pipelines. Utilizing advanced sensor fusion—combining 3D-LiDAR and thermal imaging—the swarm rapidly assesses structural integrity and storm damage. This immediate, high-fidelity data acquisition eliminates human risk in hazardous environments and accelerates disaster recovery.
-</details>
-
-<details open>
-<summary><b>🌲 Agritech: Precision Forestry & Ecological Restoration</b></summary>
-<br>
-At its core, GAP revolutionizes Precision Forestry and autonomous ecological restoration. The drone swarm executes targeted biological interventions, such as autonomous seed pod deployment via precision servos. Crucially, the platform guarantees <strong>EUDR first-mile traceability</strong>, generating immutable polygon mapping for plots exceeding 4 hectares and anchoring this geospatial intelligence directly to Web3 Audit Ledgers for absolute regulatory compliance.
-
-<br>
-<div align="center">
-  <img src="./assets/GAPbot_unstructured_forest.webp" alt="GAPbot navigating unstructured forest" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
-  <p><i>GAPbot autonomously navigating unstructured biological terrain</i></p>
-</div>
-</details>
-
-<details open>
-<summary><b>🛡️ Emergency Response: Dual-Use & Defense</b></summary>
-<br>
-Engineered for <strong>Dual-Use</strong> applications, GAP provides tactical superiority in protecting critical civil infrastructure. Our decentralized <strong>B.A.T.M.A.N.-adv mesh network</strong> ensures uninterrupted swarm communication and coordination in GPS-denied, electronically jammed, or communication-compromised environments. This robust topology is mission-critical for Search-and-Rescue (SAR) operations, disaster management, and complex defense scenarios where traditional comms fail.
-
-<br>
-<div align="center">
-  <img src="./assets/GAPdrone_forest_fire_detection.webp" alt="GAPdrone forest fire detection" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px;" />
-  <p><i>Thermal and visual monitoring for disaster mitigation and emergency response</i></p>
-</div>
-</details>
-
-
-
-### ⚡ Core Capabilities
-The GAP ecosystem is built upon our foundational pillars that ensure operational excellence and technological superiority:
-
-*   **Green Tech & Consulting:** Harmonizing biological requirements with automated systems.
-*   **AI & Automation:** Neuro-symbolic hybrid-AI, Edge inference, and autonomous navigation.
-*   **Blockchain & Web3:** Quantum-resistant audit ledgers for immutable telemetry and EUDR compliance.
-*   **Security & Compliance:** Zero-Trust architecture ensuring data integrity from the edge to the node.
-
-### 🔄 The LOOP Method: Our 5-Phase Implementation Plan
-Corax CoLAB operates on a continuous improvement model, ensuring our robotic solutions deliver long-term value (LTV/CAC of 2.9). Our methodology follows a strict 5-phase plan for deploying the GAP ecosystem:
-
-1.  **Phase 1: Deep Tech Consultation & Alignment:** Strategic partnership to define edge AI and Web3 integration requirements for regulatory compliance (e.g., EUDR, CSRD).
-2.  **Phase 2: Digital Twin Simulation:** Utilizing 4D simulation to model complex kinematics and mission parameters before physical deployment, reducing field errors.
-3.  **Phase 3: Edge-First Deployment:** Installing the autonomous GAP drone or GAPbot with local SLAM and Hailo-8 NPU inference, completely independent of cloud architecture.
-4.  **Phase 4: Swarm Intelligence Coordination:** Enabling B.A.T.M.A.N.-adv mesh networking and CBBA task allocation for seamless multi-agent operations.
-    <br>
-    <div align="center">
-      <img src="./assets/GAPdrone_swarm.webp" alt="GAPdrone Swarm Intelligence" width="100%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); margin-bottom: 10px; margin-top: 10px;" />
-      <p><i>Decentralized B.A.T.M.A.N.-adv mesh networking enabling multi-agent coordination</i></p>
-    </div>
-5.  **Phase 5: Immutable Audit & LOOP Refinement:** Securing data via Quantum-Resistant Web3 Ledgers and utilizing findings to iteratively optimize ('LOOP') the system's performance and efficiency.
+### 🧬 The GAP Pipeline
+The system utilizes sequential, high-speed pipelines. For example, the GAPdrone's internal pipeline flows:
+**Camera** ➡️ **Hailo-8 NPU** ➡️ **ROS 2 Brain Node** ➡️ **MicroXRCE-DDS** ➡️ **Pixhawk 6C Flight Controller**
 
 ---
 
-## 🛠️ Technology Stack
+## 🌍 Compliance & Ethics (2026 Readiness)
 
-GAP is an **Edge-First** ecosystem. Rather than relying on fragile cloud architectures, our systems execute complex inferences locally, ensuring total operational autonomy even in disconnected, unstructured environments.
+Corax CoLAB is fundamentally committed to ethical innovation and rigorous regulatory compliance, specifically aligned with upcoming 2026 mandates like the EU Deforestation Regulation (EUDR).
 
-### 🦅 Hardware Integration (GAPdrone & GAPbot)
-Our edge units are built upon industrial-grade, mission-critical hardware engineered for high efficiency:
-*   **Companion Computer:** Raspberry Pi 5 (16GB RAM)
-*   **Edge AI Acceleration:** Hailo-8L NPU (**26 TOPS** for ultra-low latency real-time biological classification)
-*   **Efficiency Benchmark:** Industry-leading **TOPS/Watt** ratio, enabling prolonged 'Sun Bathing Mode' and extreme field endurance without thermal throttling or rapid battery depletion.
-*   **Flight Controller (GAPdrone):** Holybro Pixhawk 6C
-*   **Frame (GAPdrone):** Holybro X650
+*   **Horizon Europe & Vinnova Standards:** We are fully compliant with Horizon Europe and Vinnova standards.
+*   **Gender Equality Plan:** View our formal <a href="https://coraxcolab.com/gep">Gender Equality Plan</a>.
+*   **Community Standards:** Please review our [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) and [CONTRIBUTING.md](./CONTRIBUTING.md).
+*   **First-Mile Traceability:** Ensuring immutable polygon mapping for plots exceeding 4 hectares via Web3 Audit Ledgers.
 
-#### Performance Benchmark: Edge vs. Cloud
-| Architecture | Accelerator | Performance | Latency | Efficiency (TOPS/Watt) |
-| :--- | :--- | :--- | :--- | :--- |
-| **GAPbot - Local Edge** | Hailo-8L NPU (PCIe) | 26 TOPS | < 5 ms | Ultra-High |
-| **Traditional Cloud** | Remote GPU Array | High | > 100 ms | Low (Network Dependent) |
+---
 
-### 🧠 Software Architecture
-*   **Core Middleware:** Asynchronous **ROS 2 (Humble)** architecture.
-*   **Flight Control Bridge:** Seamless telemetry and command execution via **MicroXRCE-DDS** directly bridging ROS 2 and PX4 Autopilot, bypassing legacy MAVProxy constraints.
-*   **Networking:** Robust decentralized swarm communication using **B.A.T.M.A.N.-adv** mesh networking.
+## 🔬 Repository Highlights
 
-<br />
+Explore the technical showcases available in this public repository:
 
-> ⚠️ **Note:** This repository serves as a **public architectural overview, documentation hub, and AI context layer**. Proprietary business logic, core SLAM algorithms, trained ML models (e.g., custom YOLO weights), and Zero-Trust Security handshakes remain in Corax CoLAB's private enterprise repository.
+<details>
+<summary><b>🔒 gap_zero_trust</b></summary>
+<br>
+Showcases our approach to cyber-secure Edge AI and Zero-Trust architecture, crucial for protecting high-bandwidth sensor data and ensuring operational telemetry in heavy manufacturing (Industry 5.0).
+</details>
+
+<details>
+<summary><b>🗺️ core_slam</b></summary>
+<br>
+Demonstrates the integration of advanced sensor fusion (3D-LiDAR and thermal imaging) for autonomous navigation and infrastructure inspections in GPS-denied environments.
+</details>
+
+<details>
+<summary><b>🚁 gapdrone_edge_ai</b></summary>
+<br>
+Highlights the airborne Edge AI unit used for ecological interventions (e.g., autonomous seed pod deployment), tactical deployment, and continuous swarm coordination over a B.A.T.M.A.N.-adv mesh network.
+</details>
 
 ---
 
