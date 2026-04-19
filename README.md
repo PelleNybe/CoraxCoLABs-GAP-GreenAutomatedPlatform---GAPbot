@@ -20,9 +20,13 @@
 
 ## 💎 Project Philosophy: Open Core & Commercial Licensing
 
-This repository serves as a **limited 'Source-Available' showcase** intended strictly for research, education, architectural overview, and technical demonstration.
+This repository serves as a **limited 'Source-Available' showcase** intended strictly for research and education.
 
-The full, production-ready Green Automated Platform (GAP)—featuring advanced **MANET mesh failover**, **3D volumetric mapping**, and complete **EUDR API integration**—is a proprietary enterprise product developed by Corax CoLAB AB.
+The **Commercial Enterprise Edition** of the Green Automated Platform (GAP) is a proprietary enterprise product developed by Corax CoLAB AB that includes proprietary features such as:
+- **Offline-First MANET Reconvergence**
+- **3D Volumetric Biomass Estimation**
+- **Hardware-Accelerated NPU Pipelines (Hailo-8)**
+- **Complete EUDR API Integration**
 
 <details open>
 <summary><b>Licensing Notice</b></summary>
@@ -38,9 +42,9 @@ This project utilizes a <strong>Dual-License structure</strong>:
 
 <div align="center" style="background-color: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333;">
   <h3>🚀 Ready for Enterprise Deployment?</h3>
-  <p>Commercial entities, enterprise partners, and investors looking for licensing, deep-tech consulting, or implementation services are encouraged to reach out.</p>
+  <p>Commercial entities, enterprise partners, and investors looking for licensing, deep-tech professional consulting services, or implementation are encouraged to direct commercial inquiries to info@coraxcolab.com.</p>
   <a href="mailto:info@coraxcolab.com"><img src="https://img.shields.io/badge/Contact-info@coraxcolab.com-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" alt="Email Us"></a>
-  <a href="https://coraxcolab.com"><img src="https://img.shields.io/badge/Website-coraxcolab.com-22314E?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>
+  <a href="https://coraxcolab.com"><img src="https://img.shields.io/badge/Consulting-coraxcolab.com-22314E?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>
 </div>
 
 ---
@@ -49,8 +53,29 @@ This project utilizes a <strong>Dual-License structure</strong>:
 
 Our 'Edge-First' decentralized architecture leverages real-time AI inference locally via Hailo-8L NPUs to maintain true offline autonomy.
 
+```mermaid
+graph TD
+    subgraph Governance
+        EUDR
+        TRACES
+    end
+    subgraph GAP_Edge [GAP Edge-First Platform]
+        Drone[GAPdrone - UAV]
+        Bot[GAPbot - UGV]
+        Registry
+    end
+    subgraph Safety_Resilience
+        SAR
+        Fire[Firefighting Ad-hoc Mesh]
+    end
+    Operator((Forest Manager)) -- "Goal-Oriented Tasks" --> Registry
+    Registry -- "Dynamic Loading" --> Drone & Bot
+    Drone -- "6-Decimal Polygons" --> EUDR
+    Bot -- "MAOC Carbon Analysis" --> TRACES
+    Drone <--> Bot -- "MANET Mesh" --> Drone
+```
+
 <div align="center">
-  <img src="./assets/architecture_placeholder.png" alt="System Architecture" width="90%" style="border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15);" />
   <p><i>The GAP Ecosystem Architecture: Highlighting the data flow from Edge Sensors to Web3 Audit Ledgers.</i></p>
 </div>
 
@@ -60,7 +85,7 @@ The system utilizes sequential, high-speed pipelines. For example, the GAPdrone'
 
 ---
 
-## 🌍 Compliance & Ethics (2026 Readiness)
+## 🌍 2026 Regulatory Readiness
 
 Corax CoLAB is fundamentally committed to ethical innovation and rigorous regulatory compliance, specifically aligned with upcoming 2026 mandates like the EU Deforestation Regulation (EUDR).
 
