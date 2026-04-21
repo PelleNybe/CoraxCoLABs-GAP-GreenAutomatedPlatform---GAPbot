@@ -7,7 +7,7 @@ Before any software updates are deployed to physical hardware operating in sensi
 Our primary testing ground is a pure software simulation utilizing **Gazebo (Ignition)** integrated with the PX4 Autopilot SITL architecture.
 
 *   **World Models:** We utilize high-fidelity 3D environments simulating dense forestry and unstructured terrain, acting as synthetic inputs for our SLAM and visual odometry pipelines.
-*   **Sensor Simulation:** Gazebo provides synthetic LiDAR point-clouds and RGB camera feeds, which are routed through a software mock of the Hailo-8 NPU to test the logical flow of our ROS 2 inference nodes.
+*   **Sensor Simulation:** Gazebo provides synthetic LiDAR point-clouds and RGB camera feeds, which are routed through a software synthetic of the Hailo-8 NPU to test the logical flow of our ROS 2 inference nodes.
 
 ### Running the SITL Environment
 *(Note: Requires the proprietary simulation packages available in the Corax CoLAB private registry).*

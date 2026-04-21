@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 
-// Generates a mock point cloud representing a terrain/environment
+// Generates a synthetic point cloud representing a terrain/environment
 function PointCloud({ rotationSpeed }: { rotationSpeed: number }) {
   const pointsRef = useRef<THREE.Points>(null);
 

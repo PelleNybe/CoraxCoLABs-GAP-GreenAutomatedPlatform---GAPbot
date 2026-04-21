@@ -9,6 +9,7 @@
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/PelleNybe/gap)
 [![ROS 2](https://img.shields.io/badge/ROS_2-Humble%20%7C%20Jazzy-22314E?style=for-the-badge&logo=ros&logoColor=white)](https://docs.ros.org/en/humble/index.html)
 [![Edge AI](https://img.shields.io/badge/Edge_AI-Hailo--8-FF4F00?style=for-the-badge&logo=linux&logoColor=white)](https://hailo.ai/)
+[![DVC](https://img.shields.io/badge/MLOps-DVC_Version_Control-13ADC7?style=for-the-badge&logo=dvc&logoColor=white)](https://dvc.org/)
 [![Web3](https://img.shields.io/badge/Ledger-Web3_Audit-8A2BE2?style=for-the-badge&logo=web3dotjs&logoColor=white)](https://cryptop.coraxcolab.com)
 [![License: Dual](https://img.shields.io/badge/License-Dual_License-blue?style=for-the-badge)](./LICENSE)
 
@@ -75,6 +76,16 @@ graph TD
     Drone <--> Bot -- "MANET Mesh" --> Drone
 ```
 
+<div align="center" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; margin: 20px 0;">
+  <img src="./assets/hero-gapbot.png" alt="GAPbot in action" style="width: 100%; display: block;" />
+  <p><i>The autonomous GAPbot surveying unstructured biological terrains.</i></p>
+</div>
+
+<div align="center" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; margin: 20px 0;">
+  <img src="./assets/GAPdrone_swarm.webp" alt="GAPdrone Swarm" style="width: 100%; display: block;" />
+  <p><i>The GAPdrone swarm coordinating via B.A.T.M.A.N.-adv mesh network.</i></p>
+</div>
+
 <div align="center">
   <p><i>The GAP Ecosystem Architecture: Highlighting the data flow from Edge Sensors to Web3 Audit Ledgers.</i></p>
 </div>
@@ -82,6 +93,42 @@ graph TD
 ### 🧬 The GAP Pipeline
 The system utilizes sequential, high-speed pipelines. For example, the GAPdrone's internal pipeline flows:
 **Camera** ➡️ **Hailo-8 NPU** ➡️ **ROS 2 Brain Node** ➡️ **MicroXRCE-DDS** ➡️ **Pixhawk 6C Flight Controller**
+
+
+### 🤖 LLM Mission Goal Structure
+The NLP pipeline translates human intents into structured JSON representations. The system converts these intents into actionable kinematic waypoints for the swarm coordinators.
+```json
+{
+  "mission_id": "msn_alpha_092",
+  "priority": "high",
+  "agent_targets": ["drone_1", "drone_2", "hexapod_1"],
+  "objectives": [
+    {
+      "type": "scout_area",
+      "parameters": {
+        "bounding_box": {
+          "north_west": {"lat": 59.3293, "lon": 18.0686},
+          "south_east": {"lat": 59.3280, "lon": 18.0700}
+        },
+        "altitude_m": 35.0,
+        "search_pattern": "lawnmower"
+      }
+    }
+  ]
+}
+```
+
+
+---
+
+
+## 🛡️ Rigorous Quality Assurance
+
+The GAP system operates in mission-critical environments. To ensure absolute reliability and safety, the system has successfully passed a comprehensive **Master System Audit 2026**. This audit verifies:
+- Strict **hardware-software parity** across all deployed edge devices.
+- Full compliance with the upcoming **EU AI Act**, ensuring transparent and accountable autonomous operations.
+- Implementation of industry best practices for reproducible AI using **DVC (Data Version Control)**.
+- Adherence to our [Inclusive Design Guidelines](./INCLUSIVE_DESIGN_GUIDELINES.md) for 2026 HRI Standards.
 
 ---
 

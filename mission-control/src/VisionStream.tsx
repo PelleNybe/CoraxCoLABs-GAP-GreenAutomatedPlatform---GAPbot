@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Mock detections
+// synthetic detections
 const DETECTIONS = [
   { class: 'Person', conf: 0.98, color: '#10b981', type: 'biological', threatLevel: 'low', action: 'monitor' },
   { class: 'Obstacle', conf: 0.85, color: '#f59e0b', type: 'physical', threatLevel: 'medium', action: 'avoid' },

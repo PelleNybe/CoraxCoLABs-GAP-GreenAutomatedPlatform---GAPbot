@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Battery, Cpu, Zap, Wifi, Activity } from 'lucide-react';
 
-// Mock Data Generators
+// synthetic Data Generators
 const genNoise = (base: number, variance: number) => base + (Math.random() - 0.5) * variance;
 
 export default function Telemetry() {
