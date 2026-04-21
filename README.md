@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=129532&height=150&section=header&text=Green%20Automated%20Platform%20(GAP)&fontSize=40&fontAlignY=35&desc=Autonomous%20Ecosystem%20for%20a%20Safer%20Society&descAlignY=55&descAlign=50" width="100%"/>
+  <img src="./assets/GAP_logotype.png" alt="Green Automated Platform (GAP)" width="60%" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 20px 0;"/>
 </div>
 
 <div align="center">
@@ -75,6 +75,11 @@ flowchart TD
     Bot -- "MAOC Carbon Analysis" --> TRACES
     Drone <--> Bot -- "MANET Mesh" --> Drone
 ```
+
+<div align="center" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; margin: 20px 0;">
+  <img src="./assets/GAPbot_and_GAPdrone_forest.webp" alt="GAPbot and GAPdrone in the forest" style="width: 100%; display: block;" />
+  <p><i>The autonomous GAPbot and GAPdrone operating synergistically in a forest environment.</i></p>
+</div>
 
 <div align="center" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; margin: 20px 0;">
   <img src="./assets/hero-gapbot.png" alt="GAPbot in action" style="width: 100%; display: block;" />
