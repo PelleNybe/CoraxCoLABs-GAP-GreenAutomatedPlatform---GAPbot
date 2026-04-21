@@ -15,7 +15,7 @@ The architecture below is designed to be horizontally scalable across our four c
 The GAP ecosystem relies on a robust, decentralized network for mission-critical operations in unstructured, remote environments. We utilize the **B.A.T.M.A.N.-adv (Better Approach To Mobile Adhoc Networking)** mesh protocol to ensure resilient, infrastructure-less communication.
 
 ```mermaid
-graph TD
+flowchart TD
     subgraph "Web3 & Operations"
         Operator[Operator Dashboard <br/> React / Three.js / Vite]
         Ledger[(Web3 Audit Ledger <br/> Quantum-Resistant)]

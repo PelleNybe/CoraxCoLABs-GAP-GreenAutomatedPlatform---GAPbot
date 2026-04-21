@@ -55,7 +55,7 @@ This project utilizes a <strong>Dual-License structure</strong>:
 Our 'Edge-First' decentralized architecture leverages real-time AI inference locally via Hailo-8L NPUs to maintain true offline autonomy.
 
 ```mermaid
-graph TD
+flowchart TD
     subgraph Governance
         EUDR
         TRACES
