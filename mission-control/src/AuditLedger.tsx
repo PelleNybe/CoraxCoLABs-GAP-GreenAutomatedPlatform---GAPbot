@@ -1,17 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // synthetic Ledger Events
-const EVENT_TYPES = [
-    { type: 'SENSOR_READING', severity: 'info', icon: '📡' },
-    { type: 'OBJECT_DETECTED', severity: 'warn', icon: '👁️' },
-    { type: 'KINEMATICS_ADJUST', severity: 'info', icon: '🦾' },
-    { type: 'PATH_RECALCULATION', severity: 'warn', icon: '🗺️' },
-    { type: 'SYSTEM_SYNC', severity: 'success', icon: '☁️' },
-    { type: 'EDGE_INFERENCE', severity: 'info', icon: '🧠' },
-    { type: 'COLLISION_AVOIDANCE', severity: 'critical', icon: '⚠️' }
-];
-
+// Define LogEntry before it's used in LogItem
 interface LogEntry {
     id: string;
     timestamp: string;
@@ -21,6 +12,48 @@ interface LogEntry {
     hash: string;
     payload: string;
 }
+
+const LogItem = React.memo(({ log, getSeverityStyle }: { log: LogEntry, getSeverityStyle: (severity: string) => string }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+            className={`flex flex-col border rounded p-3 gap-2 backdrop-blur-sm ${getSeverityStyle(log.severity)}`}
+        >
+            {/* Top row: Icon, Type, Time */}
+            <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                    <span className="text-xl">{log.icon}</span>
+                    <span className="font-bold tracking-wider">{log.type}</span>
+                </div>
+                <span className="text-xs font-mono opacity-70">{log.timestamp}</span>
+            </div>
+
+            {/* Middle row: Payload */}
+            <div className="pl-8 text-xs font-mono opacity-90 break-words">
+                &gt; {log.payload}
+            </div>
+
+            {/* Bottom row: Cryptographic Hash */}
+            <div className="pl-8 mt-1 pt-2 border-t border-inherit flex items-center gap-2 opacity-60">
+                <span className="text-[10px] uppercase font-bold shrink-0">TX_HASH:</span>
+                <span className="text-[10px] truncate select-all">{log.hash}</span>
+            </div>
+        </motion.div>
+    );
+});
+
+const EVENT_TYPES = [
+    { type: 'SENSOR_READING', severity: 'info', icon: '📡' },
+    { type: 'OBJECT_DETECTED', severity: 'warn', icon: '👁️' },
+    { type: 'KINEMATICS_ADJUST', severity: 'info', icon: '🦾' },
+    { type: 'PATH_RECALCULATION', severity: 'warn', icon: '🗺️' },
+    { type: 'SYSTEM_SYNC', severity: 'success', icon: '☁️' },
+    { type: 'EDGE_INFERENCE', severity: 'info', icon: '🧠' },
+    { type: 'COLLISION_AVOIDANCE', severity: 'critical', icon: '⚠️' }
+];
 
 const generateHash = () => {
     return Array.from({length: 64}, () => Math.floor(Math.random() * 16).toString(16)).join('');
@@ -68,7 +101,7 @@ export default function AuditLedger() {
   }, [isPaused]);
 
 
-  const getSeverityStyle = (severity: string) => {
+  const getSeverityStyle = React.useCallback((severity: string) => {
       switch(severity) {
           case 'success': return 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20';
           case 'warn': return 'text-amber-400 bg-amber-500/10 border-amber-500/20';
@@ -76,15 +109,17 @@ export default function AuditLedger() {
           case 'info':
           default: return 'text-zinc-300 bg-zinc-800/30 border-zinc-700/50';
       }
-  }
+  }, []);
 
-  const filteredLogs = logs.filter(log => {
-      const matchesSeverity = filterSeverity === 'all' || log.severity === filterSeverity;
-      const matchesSearch = log.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                            log.payload.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                            log.hash.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesSeverity && matchesSearch;
-  });
+  const filteredLogs = useMemo(() => {
+      return logs.filter(log => {
+          const matchesSeverity = filterSeverity === 'all' || log.severity === filterSeverity;
+          const matchesSearch = log.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                log.payload.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                log.hash.toLowerCase().includes(searchQuery.toLowerCase());
+          return matchesSeverity && matchesSearch;
+      });
+  }, [logs, filterSeverity, searchQuery]);
 
   return (
     <div className="w-full h-full bg-zinc-950 flex flex-col font-mono text-sm relative">
@@ -159,34 +194,7 @@ export default function AuditLedger() {
         >
             <AnimatePresence initial={false}>
                 {filteredLogs.map((log) => (
-                    <motion.div
-                        key={log.id}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.3 }}
-                        className={`flex flex-col border rounded p-3 gap-2 backdrop-blur-sm ${getSeverityStyle(log.severity)}`}
-                    >
-                        {/* Top row: Icon, Type, Time */}
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                                <span className="text-xl">{log.icon}</span>
-                                <span className="font-bold tracking-wider">{log.type}</span>
-                            </div>
-                            <span className="text-xs font-mono opacity-70">{log.timestamp}</span>
-                        </div>
-
-                        {/* Middle row: Payload */}
-                        <div className="pl-8 text-xs font-mono opacity-90 break-words">
-                            &gt; {log.payload}
-                        </div>
-
-                        {/* Bottom row: Cryptographic Hash */}
-                        <div className="pl-8 mt-1 pt-2 border-t border-inherit flex items-center gap-2 opacity-60">
-                            <span className="text-[10px] uppercase font-bold shrink-0">TX_HASH:</span>
-                            <span className="text-[10px] truncate select-all">{log.hash}</span>
-                        </div>
-                    </motion.div>
+                    <LogItem key={log.id} log={log} getSeverityStyle={getSeverityStyle} />
                 ))}
             </AnimatePresence>
 

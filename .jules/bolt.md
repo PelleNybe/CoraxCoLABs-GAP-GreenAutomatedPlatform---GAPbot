@@ -1,0 +1,3 @@
+## 2026-04-25 - [Frontend React Component Rendering Optimization]
+**Learning:** React re-renders components and arrays constantly in `setInterval` and `useState` updates. Extracting helper functions outside the function components prevents their recreation. Wrapping list elements in `React.memo` paired with `useCallback` on handler functions saves significant rendering time in lists. In the Mission Control project `AuditLedger.tsx` is constantly streaming 50 items and previously filtered them and rendered them on each frame update which could cause frame drops in a busy UI.
+**Action:** Extract helper methods, use `useMemo` on computationally heavy state derivatives like `filteredLogs`, and isolate array elements into `React.memo` components.
