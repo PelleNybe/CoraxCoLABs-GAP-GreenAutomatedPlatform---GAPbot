@@ -6,6 +6,19 @@ import { Battery, Cpu, Zap, Wifi, Activity } from 'lucide-react';
 // synthetic Data Generators
 const genNoise = (base: number, variance: number) => base + (Math.random() - 0.5) * variance;
 
+// Helper for conditional styling
+const getStatusColor = (val: number, warn: number, crit: number) => {
+    if (val >= crit) return 'text-status-critical shadow-glow-critical';
+    if (val >= warn) return 'text-status-warn';
+    return 'text-status-success';
+};
+
+const getBarColor = (val: number, warn: number, crit: number) => {
+  if (val >= crit) return 'bg-status-critical';
+  if (val >= warn) return 'bg-status-warn';
+  return 'bg-status-success';
+}
+
 export default function Telemetry() {
   const [data, setData] = useState({
     cpuTemp: 45,
@@ -53,18 +66,7 @@ export default function Telemetry() {
     return () => clearInterval(interval);
   }, []);
 
-  // Helper for conditional styling
-  const getStatusColor = (val: number, warn: number, crit: number) => {
-      if (val >= crit) return 'text-status-critical shadow-glow-critical';
-      if (val >= warn) return 'text-status-warn';
-      return 'text-status-success';
-  };
 
-  const getBarColor = (val: number, warn: number, crit: number) => {
-    if (val >= crit) return 'bg-status-critical';
-    if (val >= warn) return 'bg-status-warn';
-    return 'bg-status-success';
-  }
 
   return (
     <div className="w-full h-full p-6 bg-background text-textMain font-mono flex flex-col gap-6 overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
