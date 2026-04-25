@@ -13,6 +13,7 @@ import hashlib
 import json
 import time
 import secrets
+import os
 
 class ZeroTrustHandshake:
     def __init__(self, shared_secret: bytes):
@@ -50,7 +51,12 @@ class ZeroTrustHandshake:
 
 if __name__ == "__main__":
     # Example Usage
-    secret_key = b"super_secret_quantum_resistant_key_123!"
+    secret_key_env = os.environ.get("GAP_SHARED_SECRET")
+    if not secret_key_env:
+        print("WARNING: GAP_SHARED_SECRET environment variable not set. Using insecure default for testing.")
+        secret_key_env = "default_insecure_dev_key_do_not_use_in_prod!"
+
+    secret_key = secret_key_env.encode('utf-8')
     handshake = ZeroTrustHandshake(secret_key)
     
     # 1. Agent A creates a message
