@@ -39,7 +39,9 @@ function App() {
               whileHover={{ scale: 1.02, x: 4 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setActiveTab(idx)}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 relative overflow-hidden ${
+              aria-label={`Switch to ${tab.name} view`}
+              aria-current={activeTab === idx ? "page" : undefined}
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200 relative overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                 activeTab === idx
                   ? 'bg-primary-500/15 text-primary-400 border border-primary-500/30'
                   : 'text-textMuted hover:bg-surfaceHighlight hover:text-textMain border border-transparent'

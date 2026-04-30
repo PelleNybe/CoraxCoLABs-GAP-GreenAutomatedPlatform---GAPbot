@@ -72,7 +72,7 @@ function GAPbot({ position = [0, 0, 0], rotation = [0, 0, 0] }: { position?: [nu
 export default function DigitalTwin() {
   return (
     <div className="w-full h-full relative bg-background rounded-2xl overflow-hidden">
-        <div className="absolute top-6 left-6 z-10 bg-surfaceHighlight/40 p-5 rounded-2xl border border-white/5 backdrop-blur-xl shadow-2xl">
+        <div className="absolute top-6 left-6 z-10 bg-surfaceHighlight/70 backdrop-blur-2xl p-5 rounded-2xl border border-white/5 backdrop-blur-xl shadow-2xl">
             <h3 className="text-primary-400 font-bold mb-3 uppercase text-xs tracking-[0.2em] flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shadow-glow-primary animate-pulse" />
                 Live Twin Status

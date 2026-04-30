@@ -1,3 +1,15 @@
-## 2024-04-25 - Improved Form Accessibility and Keyboard Navigation in Settings
-**Learning:** Adding standard accessibility attributes to React components, such as `htmlFor` and `id` linking for form labels, `aria-describedby` for help text, and explicit `aria-label`/`aria-labelledby` attributes for interactive elements like sliders, drastically improves the usability of standard form inputs for screen-reader users without altering visual design. Additionally, `focus-visible` styles with custom rings ensure clear focus indications for keyboard navigation while avoiding default browser outlines, making it a reliable pattern for modern UIs. Utilizing `aria-live="polite"` effectively communicates real-time value updates (like range inputs) without disrupting the user flow.
-**Action:** Always implement `htmlFor` matching `id` for inputs with labels. Add `focus-visible` ring styling to interactive elements and employ `aria-live="polite"` for text values updated dynamically. Apply `aria-describedby` for additional context to inputs.
+## 2025-04-30 - Navigation Focus & ARIA Accessibility
+
+**Learning:**
+Custom motion buttons in the navigation sidebar lacked semantic ARIA labels and clear keyboard focus states, making the dashboard less accessible for keyboard-only or screen reader users.
+
+**Action:**
+Added `aria-label`, `aria-current="page"`, and explicit `focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2` utility classes to the `<motion.button>` elements in `mission-control/src/App.tsx`.
+
+## 2025-04-30 - Vision Stream Controls Accessibility
+
+**Learning:**
+Interactive elements on the video canvas (bounding boxes) and the side panel close button lacked keyboard navigability and screen reader support.
+
+**Action:**
+Added `tabIndex={0}`, `role="button"`, `aria-label`, `onKeyDown` handlers for Enter/Space, and visible focus rings (`focus-visible:ring-4`) to the bounding boxes in `VisionStream.tsx`. Also added focus styling and an ARIA label to the detail panel close button.

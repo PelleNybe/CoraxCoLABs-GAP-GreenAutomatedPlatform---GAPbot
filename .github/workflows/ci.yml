@@ -17,21 +17,26 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v3
+      with:
+        version: 10
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: 'mission-control/package-lock.json'
+        cache: 'pnpm'
+        cache-dependency-path: 'mission-control/pnpm-lock.yaml'
 
     - name: Install dependencies
       working-directory: ./mission-control
-      run: npm ci
+      run: pnpm install
 
     - name: Run linting
       working-directory: ./mission-control
-      run: npm run lint
+      run: pnpm run lint
 
     - name: Build project
       working-directory: ./mission-control
-      run: npm run build
+      run: pnpm run build

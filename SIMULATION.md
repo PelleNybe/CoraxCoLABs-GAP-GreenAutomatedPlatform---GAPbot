@@ -27,6 +27,8 @@ To validate timing, latency, and actual hardware interfaces (UART, I2C), we util
 *   **Setup:** A physical Holybro Pixhawk 6C and Raspberry Pi 5 are connected on the bench.
 *   **Execution:** The flight controller runs the actual PX4 firmware, but sensor data (IMU, GPS, Vision) is fed into the Pixhawk from the Gazebo simulation running on a powerful host PC. The Raspberry Pi 5 runs the actual ROS 2 stack and Hailo-8 NPU hardware, performing real-time inference on the synthetic video feed.
 
+> **Technical Guideline**: Drone communication must strictly use **MicroXRCE-DDS** over UART to the PX4 Autopilot. Do **NOT** use MAVProxy in this stack. Use C++ for hardware interfaces and Python for high-level wrappers.
+
 This ensures that the `MicroXRCE-DDS` UART bridge and the power draw of the Edge AI components perform as expected under simulated flight load before actual deployment.
 
 ## 📁 /simulation_stubs
