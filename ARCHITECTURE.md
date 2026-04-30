@@ -1,13 +1,24 @@
-# 🏗️ GAP Ecosystem Architecture: Archival Index
+<div align="center">
+  <h1 style="color: #10b981;">🏗️ GAP Ecosystem Architecture: Archival Index</h1>
+
+  [![Edge AI](https://img.shields.io/badge/Edge_AI-Hailo--8-FF4F00?style=for-the-badge&logo=linux&logoColor=white)](https://hailo.ai/)
+  [![ROS 2](https://img.shields.io/badge/ROS_2-Humble%20%7C%20Jazzy-22314E?style=for-the-badge&logo=ros&logoColor=white)](https://docs.ros.org/)
+  [![B.A.T.M.A.N.](https://img.shields.io/badge/Mesh-B.A.T.M.A.N.--adv-0099cc?style=for-the-badge)](https://www.open-mesh.org/projects/batman-adv/wiki)
+</div>
 
 This document provides a highly structured, data-dense overview of the Corax CoLAB Green Automated Platform (GAP) architecture. It details the precise interaction between the aerial unit (GAPdrone), ground unit (GAPbot), and our zero-trust decentralized network topology.
 
-## 🏢 Architectural Alignment by Vertical
+<details open>
+<summary><b>🏢 Architectural Alignment by Vertical</b></summary>
+<br>
 The architecture below is designed to be horizontally scalable across our four core verticals:
-1.  **Industry:** Predictive maintenance pipelines via structural digital twins.
-2.  **Infrastructure:** 4D audit trails for urban planning and compliance.
-3.  **Agritech:** Decentralized swarm mapping for EUDR 'first-mile traceability'.
-4.  **Emergency Response:** Infrastructure-less mesh networking in denied environments.
+<ul>
+  <li><b>Industry:</b> Predictive maintenance pipelines via structural digital twins.</li>
+  <li><b>Infrastructure:</b> 4D audit trails for urban planning and compliance.</li>
+  <li><b>Agritech:</b> Decentralized swarm mapping for EUDR 'first-mile traceability'.</li>
+  <li><b>Emergency Response:</b> Infrastructure-less mesh networking in denied environments.</li>
+</ul>
+</details>
 
 
 ## 🌐 System Context: Decentralized Swarm Topology

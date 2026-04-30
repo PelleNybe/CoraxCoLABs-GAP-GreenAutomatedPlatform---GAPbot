@@ -36,11 +36,18 @@ class ZeroTrustHandshake:
             payload = signed_message["payload"]
             received_signature = signed_message["signature"]
             
-            # Check for replay attacks (simple 5-minute window)
-            if time.time() - payload.get("timestamp", 0) > 300:
+            # Check for replay attacks (5-minute window and future timestamps)
+            current_time = time.time()
+            payload_time = payload.get("timestamp", 0)
+
+            if current_time - payload_time > 300:
                 print("Verification failed: Timestamp too old.")
                 return False
                 
+            if payload_time - current_time > 300: # allow 5 min clock skew
+                print("Verification failed: Timestamp from the future.")
+                return False
+
             payload_str = json.dumps(payload, sort_keys=True).encode('utf-8')
             expected_signature = hmac.new(self.shared_secret, payload_str, hashlib.sha256).hexdigest()
             
@@ -53,8 +60,7 @@ if __name__ == "__main__":
     # Example Usage
     secret_key_env = os.environ.get("GAP_SHARED_SECRET")
     if not secret_key_env:
-        print("WARNING: GAP_SHARED_SECRET environment variable not set. Using insecure default for testing.")
-        secret_key_env = "default_insecure_dev_key_do_not_use_in_prod!"
+        raise ValueError("CRITICAL ERROR: GAP_SHARED_SECRET environment variable not set. Aborting.")
 
     secret_key = secret_key_env.encode('utf-8')
     handshake = ZeroTrustHandshake(secret_key)

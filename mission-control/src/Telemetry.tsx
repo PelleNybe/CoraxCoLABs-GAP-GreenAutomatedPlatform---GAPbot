@@ -74,7 +74,7 @@ export default function Telemetry() {
         {/* Core Systems Grid */}
         <div className="grid grid-cols-4 gap-6">
             {/* Battery */}
-            <div className="col-span-1 border border-surfaceHighlight bg-surface/80 p-5 rounded-2xl flex flex-col justify-between shadow-lg relative overflow-hidden">
+            <div className="col-span-1 border border-surfaceHighlight bg-surface/90 border-white/10 p-5 rounded-2xl flex flex-col justify-between shadow-lg relative overflow-hidden">
                 <div className="flex justify-between items-start mb-2">
                    <span className="text-xs text-textMuted uppercase font-bold tracking-wider">Primary Cell</span>
                    <Battery className={`w-5 h-5 ${getStatusColor(100-data.battery, 60, 80)}`} />
@@ -84,7 +84,7 @@ export default function Telemetry() {
                         {data.battery.toFixed(1)}<span className="text-2xl">%</span>
                     </span>
                 </div>
-                <div className="text-textFaint mt-1 text-xs">24V LiPo Array</div>
+                <div className="text-textMuted mt-1 text-xs">24V LiPo Array</div>
                 {/* Visual Bar */}
                 <div className="w-full h-2 bg-surfaceHighlight rounded-full mt-4 overflow-hidden ring-1 ring-white/5">
                     <motion.div
@@ -99,7 +99,7 @@ export default function Telemetry() {
             </div>
 
             {/* RPi 5 CPU */}
-            <div className="col-span-1 border border-surfaceHighlight bg-surface/80 p-5 rounded-2xl flex flex-col justify-between shadow-lg relative overflow-hidden">
+            <div className="col-span-1 border border-surfaceHighlight bg-surface/90 border-white/10 p-5 rounded-2xl flex flex-col justify-between shadow-lg relative overflow-hidden">
                 <div className="flex justify-between items-start mb-2">
                    <span className="text-xs text-textMuted uppercase font-bold tracking-wider">Core Temp</span>
                    <Cpu className={`w-5 h-5 ${getStatusColor(data.cpuTemp, 70, 85)}`} />
@@ -109,7 +109,7 @@ export default function Telemetry() {
                         {data.cpuTemp.toFixed(1)}<span className="text-2xl">°</span>
                     </span>
                 </div>
-                <div className="text-textFaint mt-1 text-xs">Raspberry Pi 5</div>
+                <div className="text-textMuted mt-1 text-xs">Raspberry Pi 5</div>
                  <div className="w-full h-2 bg-surfaceHighlight rounded-full mt-4 overflow-hidden ring-1 ring-white/5">
                     <motion.div
                         className={`h-full ${getBarColor(data.cpuTemp, 70, 85)}`}
@@ -122,7 +122,7 @@ export default function Telemetry() {
             </div>
 
             {/* Hailo-8L NPU */}
-            <div className="col-span-1 border border-surfaceHighlight bg-surface/80 p-5 rounded-2xl flex flex-col justify-between shadow-lg relative overflow-hidden">
+            <div className="col-span-1 border border-surfaceHighlight bg-surface/90 border-white/10 p-5 rounded-2xl flex flex-col justify-between shadow-lg relative overflow-hidden">
                 <div className="flex justify-between items-start mb-2 relative z-10">
                    <span className="text-xs text-textMuted uppercase font-bold tracking-wider">NPU Temp</span>
                    <Zap className={`w-5 h-5 ${getStatusColor(data.npuTemp, 80, 95)}`} />
@@ -132,7 +132,7 @@ export default function Telemetry() {
                         {data.npuTemp.toFixed(1)}<span className="text-2xl">°</span>
                     </span>
                 </div>
-                <div className="text-textFaint mt-1 text-xs relative z-10">Hailo-8L (PCIe)</div>
+                <div className="text-textMuted mt-1 text-xs relative z-10">Hailo-8L (PCIe)</div>
                  <div className="w-full h-2 bg-surfaceHighlight rounded-full mt-4 overflow-hidden relative z-10 ring-1 ring-white/5">
                     <motion.div
                         className={`h-full ${getBarColor(data.npuTemp, 80, 95)}`}
@@ -147,12 +147,12 @@ export default function Telemetry() {
             </div>
 
             {/* Network / MQTT */}
-            <div className="col-span-1 border border-surfaceHighlight bg-surface/80 p-5 rounded-2xl flex flex-col justify-between shadow-lg">
+            <div className="col-span-1 border border-surfaceHighlight bg-surface/90 border-white/10 p-5 rounded-2xl flex flex-col justify-between shadow-lg">
                 <div className="flex justify-between items-start mb-2">
                     <span className="text-xs text-textMuted uppercase font-bold tracking-wider">Telemetry Link</span>
                     <Wifi className="w-5 h-5 text-primary-400" />
                 </div>
-                <div className="flex items-center gap-2 text-xs text-textFaint mb-2">
+                <div className="flex items-center gap-2 text-xs text-textMuted mb-2">
                     <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse shadow-glow-primary" />
                     CONNECTED (MQTT)
                 </div>
@@ -176,7 +176,7 @@ export default function Telemetry() {
         {/* Chart and Kinematics Container */}
         <div className="grid grid-cols-3 gap-6 flex-1 min-h-0">
             {/* Historical Data Chart */}
-            <div className="col-span-2 border border-surfaceHighlight bg-surface/50 rounded-2xl p-5 flex flex-col shadow-lg">
+            <div className="col-span-2 border border-surfaceHighlight bg-surface/70 border-white/10 rounded-2xl p-5 flex flex-col shadow-lg">
                 <h3 className="text-textMain font-bold tracking-widest text-sm mb-6 flex items-center gap-2">
                     <Activity className="w-4 h-4 text-primary-400" />
                     SYSTEM VITALS HISTORY
@@ -200,14 +200,14 @@ export default function Telemetry() {
             </div>
 
             {/* Kinematics & Actuators (18 Servos) */}
-            <div className="col-span-1 border border-surfaceHighlight bg-surface/50 rounded-2xl p-5 flex flex-col shadow-lg overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
+            <div className="col-span-1 border border-surfaceHighlight bg-surface/70 border-white/10 rounded-2xl p-5 flex flex-col shadow-lg overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
                 <div className="flex justify-between items-end mb-6 border-b border-surfaceHighlight pb-4">
                     <div>
                         <h3 className="text-textMain font-bold tracking-widest text-sm">KINEMATICS MATRIX</h3>
-                        <p className="text-[10px] text-textFaint uppercase mt-1 tracking-wider">18x PWM Actuators</p>
+                        <p className="text-[10px] text-textMuted uppercase mt-1 tracking-wider">18x PWM Actuators</p>
                     </div>
                     <div className="text-right">
-                        <div className="text-[10px] text-textFaint uppercase tracking-wider mb-1">Velocity</div>
+                        <div className="text-[10px] text-textMuted uppercase tracking-wider mb-1">Velocity</div>
                         <div className="text-xl font-bold text-primary-400">{data.speed.toFixed(2)} <span className="text-xs text-textMuted">m/s</span></div>
                     </div>
                 </div>
@@ -226,7 +226,7 @@ export default function Telemetry() {
                                     return (
                                         <div key={jointName} className="relative group">
                                             <div className="flex justify-between text-[9px] mb-1.5 font-bold tracking-wider">
-                                                <span className="text-textFaint group-hover:text-textMuted transition-colors">{jointName}</span>
+                                                <span className="text-textMuted group-hover:text-textMuted transition-colors">{jointName}</span>
                                                 <span className={getStatusColor(servo.load, 70, 90)}>{servo.load.toFixed(0)}%</span>
                                             </div>
                                             {/* Load Bar */}

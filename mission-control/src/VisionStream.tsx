@@ -114,7 +114,16 @@ export default function VisionStream() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => handleBoxClick(box)}
-            className={`absolute border-2 flex flex-col justify-start cursor-pointer transition-colors ${selectedBox && selectedBox.id !== box.id ? 'opacity-30' : 'opacity-100 z-30'}`}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleBoxClick(box);
+              }
+            }}
+            tabIndex={0}
+            role="button"
+            aria-label={`Select detected ${box.class} with ${(box.conf * 100).toFixed(0)}% confidence`}
+            className={`absolute border-2 flex flex-col justify-start cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/80 ${selectedBox && selectedBox.id !== box.id ? 'opacity-30' : 'opacity-100 z-30'}`}
             style={{
               left: `${box.x}%`,
               top: `${box.y}%`,
@@ -169,7 +178,7 @@ export default function VisionStream() {
                           <span className="w-3 h-3 rounded-full" style={{ backgroundColor: selectedBox.color }} />
                           TARGET LOCKED
                       </h3>
-                      <button onClick={() => { setSelectedBox(null); setIsPaused(false); }} className="text-zinc-500 hover:text-white">✕</button>
+                      <button onClick={() => { setSelectedBox(null); setIsPaused(false); }} className="text-zinc-500 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded p-1" aria-label="Close details panel">✕</button>
                   </div>
 
                   <div className="p-4 space-y-6 overflow-y-auto">

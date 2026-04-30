@@ -54,6 +54,8 @@ This project utilizes a <strong>Dual-License structure</strong>:
 
 Our 'Edge-First' decentralized architecture leverages real-time AI inference locally via Hailo-8L NPUs to maintain true offline autonomy.
 
+> **Hardware Critical Note**: To prevent system brownouts during intensive Hailo-8 NPU inference tasks, the Raspberry Pi 5 **MUST** use a dedicated 5V/5A BEC and have `usb_max_current_enable=1` set in `/boot/firmware/config.txt`.
+
 ```mermaid
 flowchart TD
     subgraph Governance
@@ -93,6 +95,11 @@ flowchart TD
 
 <div align="center">
   <p><i>The GAP Ecosystem Architecture: Highlighting the data flow from Edge Sensors to Web3 Audit Ledgers.</i></p>
+</div>
+
+<div align="center" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; margin: 20px 0;">
+  <img src="./assets/dashboard-preview.png" alt="GAP Mission Control Dashboard" style="width: 100%; display: block;" />
+  <p><i>The React/Vite based Mission Control dashboard displaying live telemetry and 3D digital twin visualization.</i></p>
 </div>
 
 ### 🧬 The GAP Pipeline
