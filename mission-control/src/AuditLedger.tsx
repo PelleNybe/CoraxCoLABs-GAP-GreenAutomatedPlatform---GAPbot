@@ -13,7 +13,7 @@ interface LogEntry {
     payload: string;
 }
 
-const LogItem = React.memo(({ log, getSeverityStyle }: { log: LogEntry, getSeverityStyle: (severity: string) => string }) => {
+const LogItem = React.memo(({ log }: { log: LogEntry }) => {
     return (
         <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -44,6 +44,17 @@ const LogItem = React.memo(({ log, getSeverityStyle }: { log: LogEntry, getSever
         </motion.div>
     );
 });
+
+
+const getSeverityStyle = (severity: string) => {
+      switch(severity) {
+          case 'success': return 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20';
+          case 'warn': return 'text-amber-400 bg-amber-500/10 border-amber-500/20';
+          case 'critical': return 'text-rose-500 bg-rose-500/10 border-rose-500/20 font-bold';
+          case 'info':
+          default: return 'text-zinc-300 bg-zinc-800/30 border-zinc-700/50';
+      }
+};
 
 const EVENT_TYPES = [
     { type: 'SENSOR_READING', severity: 'info', icon: '📡' },
@@ -101,15 +112,7 @@ export default function AuditLedger() {
   }, [isPaused]);
 
 
-  const getSeverityStyle = React.useCallback((severity: string) => {
-      switch(severity) {
-          case 'success': return 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20';
-          case 'warn': return 'text-amber-400 bg-amber-500/10 border-amber-500/20';
-          case 'critical': return 'text-rose-500 bg-rose-500/10 border-rose-500/20 font-bold';
-          case 'info':
-          default: return 'text-zinc-300 bg-zinc-800/30 border-zinc-700/50';
-      }
-  }, []);
+
 
   const filteredLogs = useMemo(() => {
       return logs.filter(log => {
@@ -194,7 +197,7 @@ export default function AuditLedger() {
         >
             <AnimatePresence initial={false}>
                 {filteredLogs.map((log) => (
-                    <LogItem key={log.id} log={log} getSeverityStyle={getSeverityStyle} />
+                    <LogItem key={log.id} log={log} />
                 ))}
             </AnimatePresence>
 
