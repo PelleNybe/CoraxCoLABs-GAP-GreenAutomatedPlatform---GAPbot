@@ -1,7 +1,5 @@
-# These are supported funding model platforms
+# .github/FUNDING.yml
 
-github: [PelleNybe] # Replace with your GitHub username if different
-patreon: # Replace with your Patreon username
-open_collective: # Replace with your Open Collective username
-ko_fi: # Replace with your Ko-fi username
-custom: ['https://coraxcolab.com', 'https://cryptop.coraxcolab.com'] # Replace with your custom funding URLs
+github: PelleNybe
+buy_me_a_coffee: PelleNybe
+custom: ["https://coraxcolab.com", "https://coraxgardening.se"]
