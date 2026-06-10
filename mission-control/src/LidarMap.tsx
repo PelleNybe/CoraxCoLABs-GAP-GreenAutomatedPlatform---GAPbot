@@ -190,18 +190,21 @@ export default function LidarMap() {
                <div className="flex flex-col gap-2">
                  <button
                    onClick={() => setViewMode('free')}
+                   aria-pressed={viewMode === 'free'}
                    className={`px-3 py-1.5 border rounded-lg text-left transition-colors ${viewMode === 'free' ? 'border-primary-500 text-primary-400 bg-primary-500/10 shadow-[0_0_10px_rgba(16,185,129,0.2)_inset]' : 'border-surfaceHighlight hover:border-textFaint'}`}
                  >
                    Free Camera
                  </button>
                  <button
                    onClick={() => setViewMode('top-down')}
+                   aria-pressed={viewMode === 'top-down'}
                    className={`px-3 py-1.5 border rounded-lg text-left transition-colors ${viewMode === 'top-down' ? 'border-primary-500 text-primary-400 bg-primary-500/10 shadow-[0_0_10px_rgba(16,185,129,0.2)_inset]' : 'border-surfaceHighlight hover:border-textFaint'}`}
                  >
                    Top-Down View
                  </button>
                  <button
                    onClick={() => setViewMode('first-person')}
+                   aria-pressed={viewMode === 'first-person'}
                    className={`px-3 py-1.5 border rounded-lg text-left transition-colors ${viewMode === 'first-person' ? 'border-primary-500 text-primary-400 bg-primary-500/10 shadow-[0_0_10px_rgba(16,185,129,0.2)_inset]' : 'border-surfaceHighlight hover:border-textFaint'}`}
                  >
                    First-Person View
@@ -210,18 +213,19 @@ export default function LidarMap() {
             </div>
 
             <div className="mt-4 border-t border-surfaceHighlight pt-4">
-                <h4 className="text-textMain font-bold mb-2 flex justify-between">
-                  <span>ROTATION</span>
-                  <span className="text-primary-400">{rotationSpeed.toFixed(2)}x</span>
-                </h4>
+                <div className="flex justify-between items-center mb-2">
+                  <label htmlFor="rotation-speed" className="text-textMain font-bold">ROTATION</label>
+                  <span className="text-primary-400 font-bold">{rotationSpeed.toFixed(2)}x</span>
+                </div>
                 <input
+                  id="rotation-speed"
                   type="range"
                   min="-0.5"
                   max="0.5"
                   step="0.05"
                   value={rotationSpeed}
                   onChange={(e) => setRotationSpeed(parseFloat(e.target.value))}
-                  className="w-full accent-primary-500 h-1.5 bg-surfaceHighlight rounded-lg appearance-none cursor-pointer"
+                  className="w-full accent-primary-500 h-1.5 bg-surfaceHighlight rounded-lg appearance-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500"
                 />
             </div>
         </div>

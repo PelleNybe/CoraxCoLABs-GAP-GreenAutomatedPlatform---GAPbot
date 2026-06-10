@@ -156,9 +156,10 @@ export default function AuditLedger() {
         {/* Filter Bar */}
         <div className="h-12 border-b border-zinc-800 bg-zinc-900/50 flex items-center px-6 gap-4 z-10 shrink-0 backdrop-blur text-xs">
             <div className="flex items-center gap-2">
-                <span className="text-zinc-500">SEVERITY:</span>
+                <label htmlFor="severity-select" className="text-zinc-500">SEVERITY:</label>
                 <select
-                    className="bg-zinc-950 border border-zinc-800 text-zinc-300 rounded px-2 py-1 outline-none focus:border-emerald-500"
+                    id="severity-select"
+                    className="bg-zinc-950 border border-zinc-800 text-zinc-300 rounded px-2 py-1 outline-none focus:border-emerald-500 focus-visible:ring-2 focus-visible:ring-emerald-500"
                     value={filterSeverity}
                     onChange={(e) => setFilterSeverity(e.target.value)}
                 >
@@ -171,11 +172,12 @@ export default function AuditLedger() {
             </div>
 
             <div className="flex-1 flex items-center gap-2">
-                <span className="text-zinc-500">SEARCH:</span>
+                <label htmlFor="search-input" className="text-zinc-500">SEARCH:</label>
                 <input
+                    id="search-input"
                     type="text"
                     placeholder="Filter logs by type, payload, or hash..."
-                    className="w-full max-w-md bg-zinc-950 border border-zinc-800 text-zinc-300 rounded px-3 py-1 outline-none focus:border-emerald-500 transition-colors"
+                    className="w-full max-w-md bg-zinc-950 border border-zinc-800 text-zinc-300 rounded px-3 py-1 outline-none focus:border-emerald-500 transition-colors focus-visible:ring-2 focus-visible:ring-emerald-500"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />

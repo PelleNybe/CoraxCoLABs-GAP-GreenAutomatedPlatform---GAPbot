@@ -88,7 +88,15 @@ export default function Settings() {
         {/* Danger Zone */}
         <section className="bg-rose-950/20 p-6 rounded-xl border border-rose-900/50">
           <h3 className="text-lg font-medium text-rose-400 mb-4">Danger Zone</h3>
-          <button className="px-6 py-2 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:outline-none">
+          <button
+            onClick={() => {
+              if (window.confirm("Are you sure you want to factory reset this node? This action cannot be undone.")) {
+                // Reset logic here
+                console.log("Factory resetting node...");
+              }
+            }}
+            className="px-6 py-2 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:outline-none"
+          >
             Factory Reset Node
           </button>
         </section>
