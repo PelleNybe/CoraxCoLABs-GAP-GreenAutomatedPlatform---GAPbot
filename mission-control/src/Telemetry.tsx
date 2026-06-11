@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Battery, Cpu, Zap, Wifi, Activity } from 'lucide-react';
 
@@ -87,11 +86,7 @@ export default function Telemetry() {
                 <div className="text-textMuted mt-1 text-xs">24V LiPo Array</div>
                 {/* Visual Bar */}
                 <div className="w-full h-2 bg-surfaceHighlight rounded-full mt-4 overflow-hidden ring-1 ring-white/5">
-                    <motion.div
-                        className={`h-full ${getBarColor(100-data.battery, 60, 80)}`}
-                        animate={{ width: `${data.battery}%` }}
-                        transition={{ type: "spring", stiffness: 50 }}
-                    />
+                    <div className={`h-full transition-all duration-500 ease-out ${getBarColor(100-data.battery, 60, 80)}`} style={{ width: `${data.battery}%` }} />
                 </div>
                 <div className="absolute -bottom-6 -right-6 opacity-5">
                     <Battery className="w-32 h-32" />
@@ -111,9 +106,9 @@ export default function Telemetry() {
                 </div>
                 <div className="text-textMuted mt-1 text-xs">Raspberry Pi 5</div>
                  <div className="w-full h-2 bg-surfaceHighlight rounded-full mt-4 overflow-hidden ring-1 ring-white/5">
-                    <motion.div
-                        className={`h-full ${getBarColor(data.cpuTemp, 70, 85)}`}
-                        animate={{ width: `${(data.cpuTemp / 100) * 100}%` }}
+                    <div
+                        className={`h-full transition-all duration-500 ease-out ${getBarColor(data.cpuTemp, 70, 85)}`}
+                        style={{ width: `${(data.cpuTemp / 100) * 100}%` }}
                     />
                 </div>
                 <div className="absolute -bottom-6 -right-6 opacity-5">
@@ -134,9 +129,9 @@ export default function Telemetry() {
                 </div>
                 <div className="text-textMuted mt-1 text-xs relative z-10">Hailo-8L (PCIe)</div>
                  <div className="w-full h-2 bg-surfaceHighlight rounded-full mt-4 overflow-hidden relative z-10 ring-1 ring-white/5">
-                    <motion.div
-                        className={`h-full ${getBarColor(data.npuTemp, 80, 95)}`}
-                        animate={{ width: `${(data.npuTemp / 120) * 100}%` }}
+                    <div
+                        className={`h-full transition-all duration-500 ease-out ${getBarColor(data.npuTemp, 70, 85)}`}
+                        style={{ width: `${(data.npuTemp / 120) * 100}%` }}
                     />
                 </div>
                 {/* Background pulse if hot */}
@@ -231,9 +226,9 @@ export default function Telemetry() {
                                             </div>
                                             {/* Load Bar */}
                                             <div className="w-full h-1.5 bg-surfaceHighlight rounded-full overflow-hidden">
-                                                <motion.div
-                                                    className={`h-full opacity-80 ${getBarColor(servo.load, 70, 90)}`}
-                                                    animate={{ width: `${Math.min(100, Math.max(0, servo.load))}%` }}
+                                                <div
+                                                    className={`h-full opacity-80 transition-all duration-500 ease-out ${getBarColor(servo.load, 70, 90)}`}
+                                                    style={{ width: `${Math.min(100, Math.max(0, servo.load))}%` }}
                                                 />
                                             </div>
                                         </div>
