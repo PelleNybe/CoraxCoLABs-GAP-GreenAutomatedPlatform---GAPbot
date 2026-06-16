@@ -44,7 +44,7 @@
     "three-stdlib": "^2.36.1",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.56.1",
-    "vite": "^8.0.8",
+    "vite": "^8.0.16",
     "vitest": "^4.1.5"
   }
 }
