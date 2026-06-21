@@ -112,7 +112,7 @@ flowchart TD
 </div>
 
 
-### 🌲 Forestry Dominance 2026: Autonomy in Biological Environments
+### 🌲 Forestry Modules 2026: Autonomy in Biological Environments
 * **Kinematics & Navigation:** GAPbot utilizes "Split-Belly Stability" combined with ROS 2 Jazzy Jalisco to navigate unstructured and difficult terrain in biological environments.
 * **3D Volumetric Biomass Estimation:** Uses FAST-LIO2 for precise mapping and volume calculation of standing forests.
 * **Multispectral Analysis:** Early pest detection and forest health monitoring via NDRE and GNDVI indices.
