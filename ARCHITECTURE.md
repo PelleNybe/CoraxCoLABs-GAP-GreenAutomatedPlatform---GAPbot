@@ -15,7 +15,7 @@ The architecture below is designed to be horizontally scalable across our four c
 <ul>
   <li><b>Industry:</b> Predictive maintenance pipelines via structural digital twins.</li>
   <li><b>Infrastructure:</b> 4D audit trails for urban planning and compliance.</li>
-  <li><b>Agritech:</b> Decentralized swarm mapping for EUDR 'first-mile traceability'.</li>
+  <li><b>Agritech:</b> Decentralized swarm mapping for EUDR 'first-mile traceability', full integration of Biometria's classification matrix (VIOL 3 / papiNet), and StanForD 2010 support.</li>
   <li><b>Emergency Response:</b> Infrastructure-less mesh networking in denied environments.</li>
 </ul>
 </details>
@@ -35,7 +35,7 @@ flowchart TD
     end
 
     subgraph "GAP Swarm Mesh (B.A.T.M.A.N.-adv)"
-        MeshNetwork((Decentralized <br/> Mesh Network))
+        MeshNetwork((Decentralized <br/> Mesh Network <br/> CBBA Task Dist.))
     end
 
     subgraph "Ground Node: GAPbot"

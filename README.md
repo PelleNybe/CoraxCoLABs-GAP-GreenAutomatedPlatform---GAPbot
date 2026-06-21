@@ -50,9 +50,18 @@ This project utilizes a <strong>Dual-License structure</strong>:
 
 ---
 
+## 🚀 The Unfair Advantage
+The GAP ecosystem combines decentralized edge computing with rigorous compliance and resilient offline networking, providing an "Unfair Advantage" in mission-critical environments.
+
 ## 🏛️ System Architecture
 
 Our 'Edge-First' decentralized architecture leverages real-time AI inference locally via Hailo-8L NPUs to maintain true offline autonomy.
+
+### ⚡ The Full-Stack of Matter: Hardware & Edge Computing
+* **Decentralized Intelligence:** Powered by an extremely powerful local stack featuring a Raspberry Pi 5 (16 GiB RAM) with active cooling.
+* **AI Acceleration:** Integrated Hailo-8 and Hailo-8L NPUs connected via PCIe enable heavy neural networks directly on the edge.
+* **Lightning-Fast Storage:** NVMe SSD (1TB) connected via USB 3.1 or PCIe ensures rapid data storage and access, even in demanding field conditions.
+
 
 > **Hardware Critical Note**: To prevent system brownouts during intensive Hailo-8 NPU inference tasks, the Raspberry Pi 5 **MUST** use a dedicated 5V/5A BEC and have `usb_max_current_enable=1` set in `/boot/firmware/config.txt`.
 
@@ -102,10 +111,22 @@ flowchart TD
   <p><i>The React/Vite based Mission Control dashboard displaying live telemetry and 3D digital twin visualization.</i></p>
 </div>
 
+
+### 🌲 Forestry Dominance 2026: Autonomy in Biological Environments
+* **Kinematics & Navigation:** GAPbot utilizes "Split-Belly Stability" combined with ROS 2 Jazzy Jalisco to navigate unstructured and difficult terrain in biological environments.
+* **3D Volumetric Biomass Estimation:** Uses FAST-LIO2 for precise mapping and volume calculation of standing forests.
+* **Multispectral Analysis:** Early pest detection and forest health monitoring via NDRE and GNDVI indices.
+* **Visual & Bioacoustic AI:** 360-degree visual trunk inspection, and built-in bioacoustic models identify and protect red-listed species in real-time.
+
 ### 🧬 The GAP Pipeline
 The system utilizes sequential, high-speed pipelines. For example, the GAPdrone's internal pipeline flows:
 **Camera** ➡️ **Hailo-8 NPU** ➡️ **ROS 2 Brain Node** ➡️ **MicroXRCE-DDS** ➡️ **Pixhawk 6C Flight Controller**
 
+
+
+### 🔋 Off-Grid Networking & Energy Management
+* **B.A.T.M.A.N.-adv Mesh & CBBA:** The swarm communicates via a decentralized mesh network and distributes tasks autonomously using the CBBA algorithm, completely independent of the internet.
+* **Sun Bathing Mode:** A unique battery-saving mode where GAPbot shuts down its motors and enters MPPT solar charging, but keeps the NPU awake to function as a passive, listening sensor node.
 
 ### 🤖 LLM Mission Goal Structure
 The NLP pipeline translates human intents into structured JSON representations. The system converts these intents into actionable kinematic waypoints for the swarm coordinators.
@@ -152,6 +173,12 @@ Corax CoLAB is fundamentally committed to ethical innovation and rigorous regula
 *   **Gender Equality Plan:** View our formal <a href="https://coraxcolab.com/gep">Gender Equality Plan</a>.
 *   **Community Standards:** Please review our [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) and [CONTRIBUTING.md](./CONTRIBUTING.md).
 *   **First-Mile Traceability:** Ensuring immutable polygon mapping for plots exceeding 4 hectares via Web3 Audit Ledgers.
+
+* **Compliance-as-Code:** Automated data streams directly to the EU's TRACES system for full EUDR/CSRD compliance.
+* **Swedish Forestry Standard:** Complete integration of Biometria's classification matrix for sawlogs and pulpwood, and data transfer to VIOL 3 via the papiNet standard.
+* **Machine Communication:** Support for the global XML standard StanForD 2010 to export digital stamping records directly to harvesters and forwarders in the forest.
+* **Security & Crypto:** Data is immutably encrypted on-edge via quantum-safe blockchain technology (Post-Quantum Cryptography, liboqs-python). The software exposes CycloneDX SBOMs for the Cyber Resilience Act (CRA) and complies with the EU Machinery Regulation with PL d-compatible E-stops for safe human-robot collaboration.
+
 
 ---
 

@@ -17,3 +17,10 @@ Här är en tydlig sammanställning i klartext över de användningsområden jag
 *   **Avancerad Spektralanalys:** Bearbetar tunga multispektrala bildströmmar (RGB + NIR) lokalt under flygning för att analysera vegetation (t.ex. NDVI) och hitta anomalier.
 *   **Luftburen 3D-kartering:** Utför LiDAR-SLAM för extremt detaljerad rums- och terrängskanning ovanifrån, vilket fungerar även i miljöer utan GPS-signal.
 *   **Svärmkoordination:** Kommunicerar kontinuerligt ner till GAPbot (och andra enheter) via mesh-nätverket för att delge AI-insikter och terrängdata, vilket snabbar på hela systemets karta och uppdrag.
+
+**Forestry Dominance 2026 (Skogsbrukets Framtid)**
+*   **Volymetrisk Biomassauppskattning i 3D:** Använder FAST-LIO2 för exakt kartering och volymberäkning av stående skog.
+*   **Multispektral Analys:** Tidig upptäckt av skadedjur och övervakning av skogshälsa via NDRE- och GNDVI-index.
+*   **Visuell och Bioakustisk AI:** 360-graders visuell staminspektion samt inbyggda bioakustiska modeller för att i realtid identifiera och skydda rödlistade arter.
+*   **"Sun Bathing Mode":** Ett unikt batterisparläge där GAPbot stänger av motorerna och övergår till MPPT-solcellsladdning, men håller NPU:n vaken för att fungera som en passiv, lyssnande sensornod.
+*   **Global Efterlevnad och Standarder:** Automatiserade dataströmmar till TRACES för EUDR/CSRD-efterlevnad. Full integration av Biometrias klassificeringsmatris via papiNet, och stöd för XML-standarden StanForD 2010.

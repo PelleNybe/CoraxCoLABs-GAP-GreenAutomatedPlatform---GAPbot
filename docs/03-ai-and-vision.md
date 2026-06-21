@@ -32,8 +32,10 @@ The "strategic" layer. EcoMind is responsible for long-term mission planning, en
 The "tactical" layer. InnoBrain handles immediate, real-time decision-making based on the incoming sensory data (Vision, Lidar, Kinematics). It reacts to dynamic obstacles and adjusts the GAPbot's gait on challenging terrain in milliseconds.
 
 ## 4. Sensor Fusion
-
 Vision is just one part of the puzzle. The GAPbot combines data from multiple sources:
+* **3D Volumetric Biomass Estimation:** Uses FAST-LIO2 for precise mapping and volume calculation of standing forests.
+* **Multispectral Analysis:** Early pest detection and forest health monitoring via NDRE and GNDVI indices.
+* **Visual & Bioacoustic AI:** 360-degree visual trunk inspection, as well as built-in bioacoustic models to identify and protect red-listed species in real-time.
 * **Lidar:** Creates real-time 2D/3D point clouds (`LidarMap.tsx`) for precise distance measurement and mapping.
 * **Kinematics:** The 18 servos provide feedback on terrain resistance and incline, feeding into the `DigitalTwin.tsx` visualization.
 * **Telemetry:** Continuous monitoring of battery, temperature, and system health (`Telemetry.tsx`).
