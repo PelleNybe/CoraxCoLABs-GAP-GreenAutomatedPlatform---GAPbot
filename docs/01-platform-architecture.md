@@ -12,18 +12,21 @@ The Green Automated Platform (GAP) is built on a fundamental principle: **Biolog
   <img src="../assets/ai-concept.png" alt="Edge AI Architecture Concept" width="80%" style="border-radius: 10px; margin: 20px 0;" />
 </div>
 
-## 1. Decentralized Edge Compute
-Unlike traditional cloud-dependent IoT systems, GAP processes critical data locally. The central API (`/gap/backend_core`) runs entirely on the physical edge device (e.g., the Raspberry Pi 5). 
+## 1. Decentralized Edge Compute & Off-Grid Networking
+Unlike traditional cloud-dependent IoT systems, GAP processes critical data locally. The central API (`/gap/backend_core`) runs entirely on the physical edge device (e.g., the Raspberry Pi 5).
 * **Local High-Speed Storage:** Telemetry and mission data are logged to a local SQLite database residing on a high-speed NVMe SSD via PCIe/USB 3.1.
 * **Offline Autonomy:** If connectivity is lost, the GAPbot and local sensors continue to execute their `Mission` and `MissionStep` objects autonomously.
+* **B.A.T.M.A.N.-adv Mesh & CBBA:** The swarm communicates via a decentralized mesh network and distributes tasks autonomously using the CBBA algorithm, completely independent of the internet.
 
 ## 2. Cloud Synchronization
 When an internet connection is established, the `Sync Service` (`/gap/cloud_monitor`) quietly wakes up in the background. It securely pushes batched updates from the local SQLite database to the cloud orchestrator (Supabase). This ensures the central Mission Control dashboard is updated without interrupting real-time physical operations.
 
-## 3. Web3 Audit Ledger & Zero-Trust Architecture
+## 3. Web3 Audit Ledger, Zero-Trust Architecture & Compliance
 In sectors like industrial agriculture and forestry, data integrity is critical. We utilize a cryptographic Web3 Audit Ledger integrated with our Zero-Trust architecture.
 *   **Immutable Tracking:** Critical events (mode changes, safety stops, environmental anomalies) are cryptographically signed and verifiable via the `AuditLedger` component in the Mission Control frontend. This creates a transparent 'first-mile traceability' record.
+*   **Compliance-as-Code:** Automated data streams directly to the EU's TRACES system for full EUDR/CSRD compliance.
 *   **Quantum-Resistant Cryptography:** We utilize advanced algorithms (like Falcon/Kyber via `liboqs-python`) to future-proof the integrity of the decentralized data stream against emerging computational threats.
+*   **Security & CRA:** The software exposes CycloneDX SBOMs for the Cyber Resilience Act (CRA) and complies with the EU Machinery Regulation with PL d-compatible E-stops.
 
 ## 4. Modern Mission Control
 The nervous system of the GAP ecosystem is the modern React/Vite-based Mission Control dashboard. It translates high-level human goals into actionable robotic commands and visualizes the bot's state in real-time. Key frontend features include:
