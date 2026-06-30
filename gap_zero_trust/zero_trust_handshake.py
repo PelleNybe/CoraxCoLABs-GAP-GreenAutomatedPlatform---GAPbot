@@ -32,13 +32,25 @@ class ZeroTrustHandshake:
         }
 
     def verify_payload(self, signed_message: dict) -> bool:
+        if not isinstance(signed_message, dict):
+            print("Verification failed: signed_message is not a dict.")
+            return False
+
         try:
             payload = signed_message["payload"]
             received_signature = signed_message["signature"]
             
+            if not isinstance(payload, dict):
+                print("Verification failed: payload is not a dict.")
+                return False
+
             # Check for replay attacks (5-minute window and future timestamps)
             current_time = time.time()
             payload_time = payload.get("timestamp", 0)
+
+            if not isinstance(payload_time, (int, float)) or isinstance(payload_time, bool):
+                print("Verification failed: timestamp is not a number.")
+                return False
 
             if current_time - payload_time > 300:
                 print("Verification failed: Timestamp too old.")

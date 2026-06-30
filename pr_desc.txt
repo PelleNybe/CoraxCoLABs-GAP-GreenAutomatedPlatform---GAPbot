@@ -1,0 +1,5 @@
+🎯 **What:** Added `isinstance` checks for `signed_message`, `payload`, and `payload_time` in `ZeroTrustHandshake.verify_payload`.
+
+⚠️ **Risk:** The previous code lacked input type validation. If a malicious user supplied a list instead of a dict, or a string instead of a float timestamp, the code would throw an unhandled `TypeError` or `AttributeError`, potentially leading to a Denial of Service (DoS) attack.
+
+🛡️ **Solution:** The solution ensures the data types are strictly verified before accessing attributes or performing calculations (like `payload.get()` or `current_time - payload_time`), preventing these unhandled runtime exceptions. It safely returns `False` if malformed data is provided.

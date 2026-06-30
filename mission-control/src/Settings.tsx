@@ -92,7 +92,6 @@ export default function Settings() {
             onClick={() => {
               if (window.confirm("Are you sure you want to factory reset this node? This action cannot be undone.")) {
                 // Reset logic here
-                console.log("Factory resetting node...");
               }
             }}
             className="px-6 py-2 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 border border-rose-500/30 rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:outline-none"
