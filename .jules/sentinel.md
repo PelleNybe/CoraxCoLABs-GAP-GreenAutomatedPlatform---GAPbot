@@ -1,4 +1,4 @@
-2026-06-30 - [Security] Remove Privileged Flag from Docker Compose
-**Vulnerability:** The `docker-compose.yml` file used `privileged: true` for the `gap_edge_node` container. This is a severe security risk as it grants the container near-host root capabilities, meaning a container breakout could compromise the entire host system (Raspberry Pi).
-**Learning:** Containers should run with the principle of least privilege. In this case, exposing the necessary hardware devices directly using the `devices` mapping (`/dev/hailo0`, `/dev/ttyAMA0`, `/dev/video0`) is sufficient, and the `privileged` flag is unnecessary.
-**Prevention:** Avoid `privileged: true` in container configurations. If specific hardware or capabilities are needed, use fine-grained `devices` mappings or `cap_add` instead. Regularly scan configurations for insecure privileges.
+2024-07-01 - Missing Input Type Validation Leading to DoS
+**Vulnerability:** The `verify_payload` method in `gap_zero_trust/zero_trust_handshake.py` lacked type validation for the input `signed_message`, `payload`, and `timestamp` fields. Sending unexpectedly typed data (e.g., list instead of dict, string instead of float) resulted in unhandled TypeErrors and AttributeErrors, which could be exploited for Denial of Service (DoS).
+**Learning:** Always validate the type of data received from untrusted sources, even before attempting to parse or access properties like timestamps.
+**Prevention:** Implement strict `isinstance` checks for all external input boundaries where Python's dynamic typing could lead to unhandled exceptions.
