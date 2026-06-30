@@ -67,7 +67,9 @@ const EVENT_TYPES = [
 ];
 
 const generateHash = () => {
-    return Array.from({length: 64}, () => Math.floor(Math.random() * 16).toString(16)).join('');
+    const array = new Uint8Array(32);
+    window.crypto.getRandomValues(array);
+    return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
 }
 
 export default function AuditLedger() {
@@ -89,15 +91,15 @@ export default function AuditLedger() {
     const addLog = () => {
       if (isPaused) return;
 
-      const event = EVENT_TYPES[Math.floor(Math.random() * EVENT_TYPES.length)];
+      const event = EVENT_TYPES[Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1) * EVENT_TYPES.length)];
       const newLog: LogEntry = {
-        id: Math.random().toString(36).substring(7),
+        id: window.crypto.randomUUID(),
         timestamp: new Date().toISOString(),
         type: event.type,
         severity: event.severity,
         icon: event.icon,
         hash: generateHash(),
-        payload: `[DATA_PACKET_${Math.floor(Math.random() * 9999)}] Size: ${Math.floor(Math.random() * 512)}KB | Sig: Valid`
+        payload: `[DATA_PACKET_${Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1) * 9999)}] Size: ${Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1) * 512)}KB | Sig: Valid`
       };
 
       setLogs((prev) => [...prev.slice(-49), newLog]); // Keep max 50 logs for performance

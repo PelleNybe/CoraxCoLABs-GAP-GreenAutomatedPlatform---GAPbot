@@ -29,7 +29,7 @@ export default function VisionStream() {
         const detection = DETECTIONS[Math.floor(Math.random() * DETECTIONS.length)];
         // Add slightly wandering coordinates
         newBoxes.push({
-          id: Math.random().toString(),
+          id: window.crypto.randomUUID(),
           ...detection,
           x: Math.random() * 60 + 10, // 10% to 70% width
           y: Math.random() * 60 + 10, // 10% to 70% height
