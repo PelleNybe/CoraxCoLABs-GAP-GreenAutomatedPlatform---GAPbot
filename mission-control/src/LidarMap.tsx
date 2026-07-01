@@ -51,10 +51,10 @@ function PointCloud({ rotationSpeed }: { rotationSpeed: number }) {
 
   const colors = useMemo(() => {
       const arr = new Float32Array(particleCount * 3);
+      const color = new THREE.Color();
       for(let i=0; i < particleCount; i++) {
           const y = positions[i * 3 + 1];
           // Color based on height (intensity)
-          const color = new THREE.Color();
           if (y > 2) color.setHex(0xef4444); // Red for high obstacles
           else if (y > 0.5) color.setHex(0xf59e0b); // Yellow for medium
           else color.setHex(0x10b981); // Green for floor/low
