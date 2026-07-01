@@ -44,6 +44,10 @@ class ZeroTrustHandshake:
                 print("Verification failed: payload is not a dict.")
                 return False
 
+            if not isinstance(received_signature, str):
+                print("Verification failed: signature is not a string.")
+                return False
+
             # Check for replay attacks (5-minute window and future timestamps)
             current_time = time.time()
             payload_time = payload.get("timestamp", 0)
