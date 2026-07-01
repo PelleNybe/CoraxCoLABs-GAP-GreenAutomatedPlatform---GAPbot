@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { Battery, Cpu, Zap, Wifi, Activity } from 'lucide-react';
 
 // synthetic Data Generators
-const genNoise = (base: number, variance: number) => base + (Math.random() - 0.5) * variance;
+const genNoise = (base: number, variance: number) => base + ((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) - 0.5) * variance;
 
 // Helper for conditional styling
 const getStatusColor = (val: number, warn: number, crit: number) => {

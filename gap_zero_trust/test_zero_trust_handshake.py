@@ -32,5 +32,12 @@ class TestZeroTrustHandshake(unittest.TestCase):
         signed["payload"]["action"] = "tampered"
         self.assertFalse(self.handshake.verify_payload(signed))
 
+    def test_verify_payload_invalid_signature_type(self):
+        # Pass a signature that is not a string
+        command = {"action": "test", "agent_id": "agent_1"}
+        signed = self.handshake.sign_payload(command)
+        signed["signature"] = 12345
+        self.assertFalse(self.handshake.verify_payload(signed))
+
 if __name__ == '__main__':
     unittest.main()
