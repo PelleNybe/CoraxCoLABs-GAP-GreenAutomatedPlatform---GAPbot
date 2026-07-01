@@ -23,18 +23,18 @@ export default function VisionStream() {
       // Keep selected box if it exists, otherwise regenerate all
       let newBoxes = selectedBox ? [selectedBox] : [];
 
-      const numBoxes = Math.floor(Math.random() * 3) + (selectedBox ? 0 : 1);
+      const numBoxes = Math.floor((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 3) + (selectedBox ? 0 : 1);
 
       for (let i = 0; i < numBoxes; i++) {
-        const detection = DETECTIONS[Math.floor(Math.random() * DETECTIONS.length)];
+        const detection = DETECTIONS[Math.floor((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * DETECTIONS.length)];
         // Add slightly wandering coordinates
         newBoxes.push({
           id: window.crypto.randomUUID(),
           ...detection,
-          x: Math.random() * 60 + 10, // 10% to 70% width
-          y: Math.random() * 60 + 10, // 10% to 70% height
-          w: Math.random() * 20 + 10,
-          h: Math.random() * 20 + 10,
+          x: (window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 60 + 10, // 10% to 70% width
+          y: (window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 60 + 10, // 10% to 70% height
+          w: (window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 20 + 10,
+          h: (window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 20 + 10,
         });
       }
 
@@ -44,8 +44,8 @@ export default function VisionStream() {
              if (b.id === selectedBox.id) {
                  return {
                      ...b,
-                     x: b.x + (Math.random() - 0.5) * 2,
-                     y: b.y + (Math.random() - 0.5) * 2
+                     x: b.x + ((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) - 0.5) * 2,
+                     y: b.y + ((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) - 0.5) * 2
                  }
              }
              return b;
