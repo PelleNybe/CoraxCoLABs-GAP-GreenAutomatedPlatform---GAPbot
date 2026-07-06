@@ -51,21 +51,21 @@ function PointCloud({ rotationSpeed }: { rotationSpeed: number }) {
 
   const colors = useMemo(() => {
       const arr = new Float32Array(particleCount * 3);
-      const color = new THREE.Color();
       for(let i=0; i < particleCount; i++) {
           const y = positions[i * 3 + 1];
           // Color based on height (intensity)
-          if (y > 2) color.setHex(0xef4444); // Red for high obstacles
-          else if (y > 0.5) color.setHex(0xf59e0b); // Yellow for medium
-          else color.setHex(0x10b981); // Green for floor/low
+          let r, g, b;
+          if (y > 2) { r = 0.937; g = 0.267; b = 0.267; } // Red for high obstacles (0xef4444)
+          else if (y > 0.5) { r = 0.961; g = 0.620; b = 0.043; } // Yellow for medium (0xf59e0b)
+          else { r = 0.063; g = 0.725; b = 0.506; } // Green for floor/low (0x10b981)
 
           // Add a subtle fade based on distance from center for a more realistic scanner look
           const distSq = positions[i*3]*positions[i*3] + positions[i*3+2]*positions[i*3+2];
           const fade = Math.max(0.1, 1 - distSq / 400); // 20^2
 
-          arr[i*3] = color.r * fade;
-          arr[i*3+1] = color.g * fade;
-          arr[i*3+2] = color.b * fade;
+          arr[i*3] = r * fade;
+          arr[i*3+1] = g * fade;
+          arr[i*3+2] = b * fade;
       }
       return arr;
   }, [positions, particleCount]);
