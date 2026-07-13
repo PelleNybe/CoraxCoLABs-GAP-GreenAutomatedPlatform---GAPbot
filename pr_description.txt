@@ -1,0 +1,12 @@
+🎯 **What:** The testing gap addressed
+The issue requested adding a test file for `swarm_communicator.py` which was missing. This requires setting up a ROS 2 test node with rclpy to publish and subscribe to test topics, which involves some setup but follows standard ROS 2 testing patterns.
+
+📊 **Coverage:** What scenarios are now tested
+- Validates the `SwarmCommunicatorNode` structure
+- Tests `broadcast_status` output for mission status payload formatting and broadcasting mechanism
+- Tests `drone_odom_callback` processes the drone telemetry updates.
+- Tests `bot_odom_callback` processes the sibling bot telemetry updates.
+- The tests are mocked in non-ROS environments, meaning they will pass inside standard standard CI tools like Github Actions even without full ROS 2 dependencies installed.
+
+✨ **Result:** The improvement in test coverage
+`swarm_communicator.py` now has a dedicated testing suite verifying its critical behaviors, adding safety against regressions and making the module more maintainable.

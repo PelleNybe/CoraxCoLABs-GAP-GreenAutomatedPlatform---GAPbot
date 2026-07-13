@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function Settings() {
   const [theme, setTheme] = useState('dark');
   const [telemetryRate, setTelemetryRate] = useState(2);
-  const [apiKey, setApiKey] = useState('sk-****************************');
+  const [apiKey, setApiKey] = useState('');
 
   return (
     <div className="w-full h-full p-8 bg-zinc-950 text-zinc-300 font-mono overflow-y-auto">
