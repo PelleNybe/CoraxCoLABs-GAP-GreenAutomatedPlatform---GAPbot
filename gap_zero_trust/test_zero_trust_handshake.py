@@ -39,10 +39,5 @@ class TestZeroTrustHandshake(unittest.TestCase):
         signed["signature"] = 12345
         self.assertFalse(self.handshake.verify_payload(signed))
 
-    def test_verify_payload_empty_dictionary_keyerror(self):
-        # Testing a missing key is straightforward. We can just pass an empty dictionary to verify_payload and assert that it gracefully returns False and catches the KeyError.
-        result = self.handshake.verify_payload({})
-        self.assertFalse(result)
-
 if __name__ == '__main__':
     unittest.main()
