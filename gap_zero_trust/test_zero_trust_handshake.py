@@ -1,10 +1,6 @@
 import unittest
-import time
 import sys
 import os
-import json
-import hmac
-import hashlib
 
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 from zero_trust_handshake import ZeroTrustHandshake
