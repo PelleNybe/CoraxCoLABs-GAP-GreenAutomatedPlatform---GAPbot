@@ -1,6 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Cryptographically secure fast random generator
+const randomBuffer = new Uint32Array(64);
+let randomIndex = randomBuffer.length;
+
+function getFastRandom() {
+  if (randomIndex >= randomBuffer.length) {
+    window.crypto.getRandomValues(randomBuffer);
+    randomIndex = 0;
+  }
+  return randomBuffer[randomIndex++] / (0xffffffff + 1);
+}
+
 // synthetic detections
 const DETECTIONS = [
   { class: 'Person', conf: 0.98, color: '#10b981', type: 'biological', threatLevel: 'low', action: 'monitor' },
@@ -23,18 +35,18 @@ export default function VisionStream() {
       // Keep selected box if it exists, otherwise regenerate all
       let newBoxes = selectedBox ? [selectedBox] : [];
 
-      const numBoxes = Math.floor((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 3) + (selectedBox ? 0 : 1);
+      const numBoxes = Math.floor(getFastRandom() * 3) + (selectedBox ? 0 : 1);
 
       for (let i = 0; i < numBoxes; i++) {
-        const detection = DETECTIONS[Math.floor((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * DETECTIONS.length)];
+        const detection = DETECTIONS[Math.floor(getFastRandom() * DETECTIONS.length)];
         // Add slightly wandering coordinates
         newBoxes.push({
           id: window.crypto.randomUUID(),
           ...detection,
-          x: (window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 60 + 10, // 10% to 70% width
-          y: (window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 60 + 10, // 10% to 70% height
-          w: (window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 20 + 10,
-          h: (window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * 20 + 10,
+          x: getFastRandom() * 60 + 10, // 10% to 70% width
+          y: getFastRandom() * 60 + 10, // 10% to 70% height
+          w: getFastRandom() * 20 + 10,
+          h: getFastRandom() * 20 + 10,
         });
       }
 
@@ -44,8 +56,8 @@ export default function VisionStream() {
              if (b.id === selectedBox.id) {
                  return {
                      ...b,
-                     x: b.x + ((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) - 0.5) * 2,
-                     y: b.y + ((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) - 0.5) * 2
+                     x: b.x + (getFastRandom() - 0.5) * 2,
+                     y: b.y + (getFastRandom() - 0.5) * 2
                  }
              }
              return b;
