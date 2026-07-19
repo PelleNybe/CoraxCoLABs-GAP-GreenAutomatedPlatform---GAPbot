@@ -114,8 +114,8 @@ except ImportError:
     MOCKED_ENV = True
 
 
-import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
+import pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 from gap_mesh_comm.swarm_communicator import SwarmCommunicatorNode
 
 class TestSwarmCommunicatorIntegration(unittest.TestCase):
