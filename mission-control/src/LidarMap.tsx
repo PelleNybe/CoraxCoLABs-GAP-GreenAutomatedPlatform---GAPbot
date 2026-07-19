@@ -12,7 +12,7 @@ function PointCloud({ rotationSpeed }: { rotationSpeed: number }) {
   const particleCount = 20000;
 
   // Create a terrain-like structure
-  const positions = useMemo(() => {
+  const { positions, colors } = useMemo(() => {
     // We use a simple seeded random to avoid purity issues in useMemo
     let seed = 1;
     const random = () => {
@@ -20,7 +20,10 @@ function PointCloud({ rotationSpeed }: { rotationSpeed: number }) {
         return x - Math.floor(x);
     };
 
-    const arr = new Float32Array(particleCount * 3);
+    const posArr = new Float32Array(particleCount * 3);
+    const colArr = new Float32Array(particleCount * 3);
+    const color = new THREE.Color();
+
     for (let i = 0; i < particleCount; i++) {
       // Scatter points in a radius
       const r = random() * 20;
@@ -42,33 +45,25 @@ function PointCloud({ rotationSpeed }: { rotationSpeed: number }) {
           y = random() * 0.2;
       }
 
-      arr[i * 3] = x;
-      arr[i * 3 + 1] = y;
-      arr[i * 3 + 2] = z;
+      posArr[i * 3] = x;
+      posArr[i * 3 + 1] = y;
+      posArr[i * 3 + 2] = z;
+
+      // Color based on height (intensity)
+      if (y > 2) color.setHex(0xef4444); // Red for high obstacles
+      else if (y > 0.5) color.setHex(0xf59e0b); // Yellow for medium
+      else color.setHex(0x10b981); // Green for floor/low
+
+      // Add a subtle fade based on distance from center for a more realistic scanner look
+      const distSq = x * x + z * z;
+      const fade = Math.max(0.1, 1 - distSq / 400); // 20^2
+
+      colArr[i * 3] = color.r * fade;
+      colArr[i * 3 + 1] = color.g * fade;
+      colArr[i * 3 + 2] = color.b * fade;
     }
-    return arr;
+    return { positions: posArr, colors: colArr };
   }, [particleCount]);
-
-  const colors = useMemo(() => {
-      const arr = new Float32Array(particleCount * 3);
-      const color = new THREE.Color();
-      for(let i=0; i < particleCount; i++) {
-          const y = positions[i * 3 + 1];
-          // Color based on height (intensity)
-          if (y > 2) color.setHex(0xef4444); // Red for high obstacles
-          else if (y > 0.5) color.setHex(0xf59e0b); // Yellow for medium
-          else color.setHex(0x10b981); // Green for floor/low
-
-          // Add a subtle fade based on distance from center for a more realistic scanner look
-          const distSq = positions[i*3]*positions[i*3] + positions[i*3+2]*positions[i*3+2];
-          const fade = Math.max(0.1, 1 - distSq / 400); // 20^2
-
-          arr[i*3] = color.r * fade;
-          arr[i*3+1] = color.g * fade;
-          arr[i*3+2] = color.b * fade;
-      }
-      return arr;
-  }, [positions, particleCount]);
 
 
   // Simulate scanner sweep
