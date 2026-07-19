@@ -117,11 +117,12 @@ export default function AuditLedger() {
 
 
   const filteredLogs = useMemo(() => {
+      const lowerSearchQuery = searchQuery.toLowerCase();
       return logs.filter(log => {
           const matchesSeverity = filterSeverity === 'all' || log.severity === filterSeverity;
-          const matchesSearch = log.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                log.payload.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                log.hash.toLowerCase().includes(searchQuery.toLowerCase());
+          const matchesSearch = log.type.toLowerCase().includes(lowerSearchQuery) ||
+                                log.payload.toLowerCase().includes(lowerSearchQuery) ||
+                                log.hash.toLowerCase().includes(lowerSearchQuery);
           return matchesSeverity && matchesSearch;
       });
   }, [logs, filterSeverity, searchQuery]);
