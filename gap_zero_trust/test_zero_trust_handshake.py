@@ -1,6 +1,8 @@
 import unittest
+from unittest.mock import patch
 import sys
 import os
+import time
 
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 from zero_trust_handshake import ZeroTrustHandshake
@@ -36,6 +38,26 @@ class TestZeroTrustHandshake(unittest.TestCase):
         command = {"action": "test", "agent_id": "agent_1"}
         signed = self.handshake.sign_payload(command)
         signed["signature"] = 12345
+        self.assertFalse(self.handshake.verify_payload(signed))
+
+    @patch('time.time')
+    def test_verify_payload_expired_timestamp(self, mock_time):
+        mock_time.return_value = 1000.0
+        command = {"action": "test", "agent_id": "agent_1"}
+        signed = self.handshake.sign_payload(command)
+
+        # Advance time by 301 seconds
+        mock_time.return_value = 1301.0
+        self.assertFalse(self.handshake.verify_payload(signed))
+
+    @patch('time.time')
+    def test_verify_payload_future_timestamp(self, mock_time):
+        mock_time.return_value = 1000.0
+        command = {"action": "test", "agent_id": "agent_1"}
+        signed = self.handshake.sign_payload(command)
+
+        # Rewind time by 301 seconds
+        mock_time.return_value = 699.0
         self.assertFalse(self.handshake.verify_payload(signed))
 
 if __name__ == '__main__':
