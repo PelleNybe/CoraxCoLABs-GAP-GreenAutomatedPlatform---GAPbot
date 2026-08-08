@@ -66,10 +66,13 @@ const EVENT_TYPES = [
     { type: 'COLLISION_AVOIDANCE', severity: 'critical', icon: '⚠️' }
 ];
 
+// Pre-allocate arrays outside the component to prevent repeated allocations
+const hashBuffer = new Uint8Array(32);
+const randomBuffer32 = new Uint32Array(3);
+
 const generateHash = () => {
-    const array = new Uint8Array(32);
-    window.crypto.getRandomValues(array);
-    return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
+    window.crypto.getRandomValues(hashBuffer);
+    return Array.from(hashBuffer, byte => byte.toString(16).padStart(2, '0')).join('');
 }
 
 export default function AuditLedger() {
@@ -91,7 +94,13 @@ export default function AuditLedger() {
     const addLog = () => {
       if (isPaused) return;
 
-      const event = EVENT_TYPES[Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1) * EVENT_TYPES.length)];
+      // Populate random buffer in one call
+      window.crypto.getRandomValues(randomBuffer32);
+
+      const event = EVENT_TYPES[Math.floor(randomBuffer32[0] / (0xffffffff + 1) * EVENT_TYPES.length)];
+      const packetId = Math.floor(randomBuffer32[1] / (0xffffffff + 1) * 9999);
+      const size = Math.floor(randomBuffer32[2] / (0xffffffff + 1) * 512);
+
       const newLog: LogEntry = {
         id: window.crypto.randomUUID(),
         timestamp: new Date().toISOString(),
@@ -99,7 +108,7 @@ export default function AuditLedger() {
         severity: event.severity,
         icon: event.icon,
         hash: generateHash(),
-        payload: `[DATA_PACKET_${Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1) * 9999)}] Size: ${Math.floor(window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1) * 512)}KB | Sig: Valid`
+        payload: `[DATA_PACKET_${packetId}] Size: ${size}KB | Sig: Valid`
       };
 
       setLogs((prev) => [...prev.slice(-49), newLog]); // Keep max 50 logs for performance
