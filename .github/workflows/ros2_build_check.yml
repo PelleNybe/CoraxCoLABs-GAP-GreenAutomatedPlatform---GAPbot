@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Setup ROS 2 ${{ matrix.ros_distribution }}
-      uses: ros-tooling/setup-ros@v0.7
+      uses: ros-tooling/setup-ros@0.7.19
       with:
         required-ros-distributions: ${{ matrix.ros_distribution }}
 
