@@ -50,8 +50,43 @@ This project utilizes a <strong>Dual-License structure</strong>:
 
 ---
 
-## 🚀 The Unfair Advantage
-The GAP ecosystem combines decentralized edge computing with rigorous compliance and resilient offline networking, providing an "Unfair Advantage" in mission-critical environments.
+
+<div align="center" style="background-color: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #444; margin-bottom: 20px;">
+  <h2 style="color: #10b981;">🚀 The Unfair Advantage</h2>
+  <p style="font-size: 1.1em; color: #e0e0e0;">The GAP ecosystem combines <strong>decentralized edge computing</strong> with rigorous <strong>compliance</strong> and resilient <strong>offline networking</strong>, providing an "Unfair Advantage" in mission-critical environments.</p>
+</div>
+
+
+
+## 🏛️ Strategic Verticals & Use Cases
+
+The GAP architecture is a horizontal platform technology, purpose-built to scale across four core strategic verticals:
+
+<details open>
+<summary><b>1. 🏭 Industry (Manufacturing & Industry 5.0)</b></summary>
+<br>
+Deploying <strong>Edge AI</strong> and <strong>Zero-Trust architecture</strong> to protect high-bandwidth sensor data and telemetry in heavy manufacturing. Enabling structural digital twins and predictive maintenance pipelines without exposing internal networks.
+</details>
+
+<details open>
+<summary><b>2. 🌉 Infrastructure (Smart Cities)</b></summary>
+<br>
+Utilizing autonomous inspections and <strong>sensor fusion</strong> (3D-LiDAR + Thermal) to generate 4D audit trails. Perfect for urban planning, bridge inspections, and compliance tracking in GPS-denied environments.
+</details>
+
+<details open>
+<summary><b>3. 🚨 Emergency Response (Dual-Use)</b></summary>
+<br>
+Deploying rapidly re-converging <strong>B.A.T.M.A.N.-adv mesh networks</strong> for Search and Rescue (SAR) operations in denied or infrastructure-less environments. The swarm operates with a <em>'high degree of autonomy'</em> to contribute to a <em>'safer society'</em>.
+</details>
+
+<details open>
+<summary><b>4. 🌲 Agritech (Precision Forestry)</b></summary>
+<br>
+Enabling <strong>'first-mile traceability'</strong> for the 2026 EU Deforestation Regulation (EUDR) using Web3 Audit Ledgers and Edge AI. The GAPdrone pushes '6-Decimal Polygons' to EUDR, while the GAPbot handles MAOC Carbon Analysis for TRACES.
+</details>
+
+<br/>
 
 ## 🏛️ System Architecture
 
@@ -176,7 +211,7 @@ The GAP system operates in mission-critical environments. To ensure absolute rel
 
 ## 🌍 2026 Regulatory Readiness
 
-Corax CoLAB is fundamentally committed to ethical innovation and rigorous regulatory compliance, specifically aligned with upcoming 2026 mandates like the EU Deforestation Regulation (EUDR).
+Corax CoLAB is fundamentally committed to ethical innovation and rigorous regulatory compliance, specifically aligned with upcoming 2026 mandates like the 2026 EU Deforestation Regulation (EUDR).
 
 *   **Horizon Europe & Vinnova Standards:** We are fully compliant with Horizon Europe and Vinnova standards.
 *   **Gender Equality Plan:** View our formal <a href="https://coraxcolab.com/gep">Gender Equality Plan</a>.
@@ -191,27 +226,32 @@ Corax CoLAB is fundamentally committed to ethical innovation and rigorous regula
 
 ---
 
-## 🔬 Repository Highlights
 
-Explore the technical showcases available in this public repository:
+## 🔬 Technical Showcases & Open Interfaces
+
+Explore the architectural stubs and public interfaces that drive the GAP Ecosystem, available in this public repository:
+
+<div style="display: flex; flex-direction: column; gap: 10px;">
 
 <details>
-<summary><b>🔒 gap_zero_trust</b></summary>
+<summary><b>🔒 gap_zero_trust: Cyber-Secure Edge AI</b></summary>
 <br>
-Showcases our approach to cyber-secure Edge AI and Zero-Trust architecture, crucial for protecting high-bandwidth sensor data and ensuring operational telemetry in heavy manufacturing (Industry 5.0).
+Showcases our approach to Zero-Trust architecture, crucial for protecting high-bandwidth sensor data and ensuring operational telemetry in heavy manufacturing (Industry 5.0) and defense applications.
 </details>
 
 <details>
-<summary><b>🗺️ core_slam</b></summary>
+<summary><b>🗺️ core_slam: GPS-Denied Navigation</b></summary>
 <br>
-Demonstrates the integration of advanced sensor fusion (3D-LiDAR and thermal imaging) for autonomous navigation and infrastructure inspections in GPS-denied environments.
+Demonstrates the integration blueprint of advanced sensor fusion (3D-LiDAR and thermal imaging) for autonomous navigation and infrastructure inspections in GPS-denied environments.
 </details>
 
 <details>
-<summary><b>🚁 gapdrone_edge_ai</b></summary>
+<summary><b>🚁 gapdrone_edge_ai: Aerial Intelligence</b></summary>
 <br>
-Highlights the airborne Edge AI unit used for ecological interventions (e.g., autonomous seed pod deployment), tactical deployment, and continuous swarm coordination over a B.A.T.M.A.N.-adv mesh network.
+Highlights the airborne Edge AI unit interfaces used for ecological interventions (e.g., autonomous seed pod deployment), tactical operations, and continuous swarm coordination over a B.A.T.M.A.N.-adv mesh network.
 </details>
+
+</div>
 
 ---
 
