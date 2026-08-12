@@ -74,6 +74,7 @@ flowchart TD
     subgraph GAP_Edge [GAP Edge-First Platform]
         Drone[GAPdrone - UAV]
         Bot[GAPbot - UGV]
+        Crawler[GAPcrawler - Heavy UGV]
         Registry
     end
     subgraph Safety_Resilience
@@ -102,6 +103,13 @@ flowchart TD
   <p><i>The GAPdrone swarm coordinating via B.A.T.M.A.N.-adv mesh network.</i></p>
 </div>
 
+<div align="center" style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; margin: 20px 0;">
+  <img src="https://coraxcolab.com/images/GAPbot_photos/industrial-gapbot-catwalk-reaching-side-view.webp" alt="GAPcrawler" style="width: 100%; display: block;" />
+  <p><i>The GAPcrawler: A heavy-duty edge unit for high-payload intervention and rugged terrain locomotion.</i></p>
+</div>
+
+
+
 <div align="center">
   <p><i>The GAP Ecosystem Architecture: Highlighting the data flow from Edge Sensors to Web3 Audit Ledgers.</i></p>
 </div>
@@ -112,7 +120,8 @@ flowchart TD
 </div>
 
 
-### 🌲 Forestry Modules 2026: Autonomy in Biological Environments
+### 🌲 GAP ForestFlow: Autonomy in Biological Environments
+The GAP ForestFlow vertical represents our dedicated solution for precision forestry and sustainable ecosystem management, ensuring compliance and efficiency.
 * **Kinematics & Navigation:** GAPbot utilizes "Split-Belly Stability" combined with ROS 2 Jazzy Jalisco to navigate unstructured and difficult terrain in biological environments.
 * **3D Volumetric Biomass Estimation:** Uses FAST-LIO2 for precise mapping and volume calculation of standing forests.
 * **Multispectral Analysis:** Early pest detection and forest health monitoring via NDRE and GNDVI indices.
