@@ -3,7 +3,7 @@ YYYY-MM-DD - [Settings component Hardcoded API key fix]
 **Learning:** Initial state for secrets should be empty or read from a configuration/environment mechanism, rather than containing default placeholders.
 **Prevention:** Avoid hardcoding sensitive API keys or secret-looking strings as initial values or placeholders in source code.
 
-2024-08-13 - [Dockerfile Container Breakout Risk]
-**Vulnerability:** Running Docker containers as the default root user poses a significant security risk, especially in Edge AI environments where devices can be accessed physically. If an attacker exploits an application vulnerability, they could escalate privileges and break out to the host system.
-**Learning:** Always implement least privilege by explicitely creating and using a non-root user within the Dockerfile to run the main container process.
-**Prevention:** Add a non-root user and transition to it via the USER instruction before defining the ENTRYPOINT and CMD.
+2024-10-25 - [Docker Compose Container Breakout Risk via Host Namespaces Fix]
+**Vulnerability:** Host namespaces (`network_mode: "host"`, `ipc: "host"`, and `pid: "host"`) were explicitly set in `docker-compose.yml`, which increases the risk of a container breakout vulnerability by sharing the host's network stack, IPC namespace, and process ID namespace with the container.
+**Learning:** Using host namespaces defeats many of the isolation benefits provided by containers. If a container is compromised, the attacker has much broader access to the host system.
+**Prevention:** Avoid using host namespaces unless strictly necessary for the application's function. In this case, removing them and relying on specific device mappings (`/dev/hailo0`, `/dev/ttyAMA0`, `/dev/video0`) is sufficient and much safer.
