@@ -27,6 +27,14 @@ class TestZeroTrustHandshake(unittest.TestCase):
         signed = self.handshake.sign_payload(command)
         self.assertTrue(self.handshake.verify_payload(signed))
 
+    def test_verify_payload_replay_attack(self):
+        command = {"action": "test", "agent_id": "agent_1"}
+        signed = self.handshake.sign_payload(command)
+        # First verification should succeed
+        self.assertTrue(self.handshake.verify_payload(signed))
+        # Second verification of the exact same message should fail
+        self.assertFalse(self.handshake.verify_payload(signed))
+
     def test_verify_payload_tampered(self):
         command = {"action": "test", "agent_id": "agent_1"}
         signed = self.handshake.sign_payload(command)
@@ -39,6 +47,21 @@ class TestZeroTrustHandshake(unittest.TestCase):
         signed = self.handshake.sign_payload(command)
         signed["signature"] = 12345
         self.assertFalse(self.handshake.verify_payload(signed))
+
+    def test_cleanup_nonces(self):
+        command = {"action": "test", "agent_id": "agent_1"}
+        signed = self.handshake.sign_payload(command)
+        self.assertTrue(self.handshake.verify_payload(signed))
+
+        nonce = signed["payload"]["nonce"]
+        self.assertIn(nonce, self.handshake.seen_nonces)
+
+        # Simulate time passing by modifying the stored time for the nonce
+        self.handshake.seen_nonces[nonce] = time.time() - 301
+
+        # Cleanup nonces using a new current time
+        self.handshake._cleanup_nonces(time.time())
+        self.assertNotIn(nonce, self.handshake.seen_nonces)
 
     @patch('time.time')
     def test_verify_payload_expired_timestamp(self, mock_time):
