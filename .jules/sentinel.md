@@ -1,10 +1,9 @@
-## 2025-02-27 - Zero Trust Handshake Nonce Validation Replay Attack Prevention
+YYYY-MM-DD - [Settings component Hardcoded API key fix]
+**Vulnerability:** A placeholder API key string `sk-****************************` was hardcoded as the initial state for the API key in the `Settings.tsx` React component. Hardcoding default API keys or secret placeholders is poor practice as it exposes sensitive formats and can mislead developers or cause secrets to leak if real keys are mistakenly entered and committed.
+**Learning:** Initial state for secrets should be empty or read from a configuration/environment mechanism, rather than containing default placeholders.
+**Prevention:** Avoid hardcoding sensitive API keys or secret-looking strings as initial values or placeholders in source code.
 
-**Vulnerability:**
-The `ZeroTrustHandshake` class checked timestamps but ignored nonces during signature verification. This allowed a malicious actor to intercept a valid payload and replay it multiple times within the 5-minute timestamp validity window without being rejected.
-
-**Learning:**
-Simply generating nonces during signing isn't enough; they must be cached and validated against seen nonces *within* the timestamp validity window to effectively prevent replay attacks. The cache must use the message's `payload_time` (not the server's receipt time) for eviction to ensure perfect alignment with the clock skew rules. Caching should only occur *after* the HMAC signature is verified to prevent DoS attacks through cache exhaustion via invalid signatures.
-
-**Prevention:**
-Implement an in-memory or persisted nonce cache that tracks valid nonces within the timestamp expiration window. Validate incoming nonces against this cache and clean out expired entries based on their payload timestamp compared to the current server time. Always verify signatures *before* modifying state (caching nonces) to prevent resource exhaustion vectors.
+2024-08-13 - [Dockerfile Container Breakout Risk]
+**Vulnerability:** Running Docker containers as the default root user poses a significant security risk, especially in Edge AI environments where devices can be accessed physically. If an attacker exploits an application vulnerability, they could escalate privileges and break out to the host system.
+**Learning:** Always implement least privilege by explicitely creating and using a non-root user within the Dockerfile to run the main container process.
+**Prevention:** Add a non-root user and transition to it via the USER instruction before defining the ENTRYPOINT and CMD.
