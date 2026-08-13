@@ -38,9 +38,14 @@ COPY ./public_interfaces /gap_ws/src/public_interfaces
 # Build the workspace
 RUN /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build"
 
+# Create a non-root user and set permissions
+RUN useradd -m gapuser && chown -R gapuser:gapuser /gap_ws
+
 # Setup entrypoint
 COPY ./ros_entrypoint.sh /
 RUN chmod +x /ros_entrypoint.sh
+
+USER gapuser
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
