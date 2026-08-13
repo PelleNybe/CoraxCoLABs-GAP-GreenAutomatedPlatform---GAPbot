@@ -18,6 +18,15 @@ import os
 class ZeroTrustHandshake:
     def __init__(self, shared_secret: bytes):
         self.shared_secret = shared_secret
+        self.seen_nonces = {}
+
+    def _cleanup_nonces(self, current_time: float):
+        # Remove nonces with payload times that are no longer valid
+        # (older than 300 seconds from current_time)
+        self.seen_nonces = {
+            n: payload_time for n, payload_time in self.seen_nonces.items()
+            if current_time - payload_time <= 300
+        }
 
     def sign_payload(self, payload: dict) -> dict:
         payload["timestamp"] = time.time()
@@ -64,10 +73,23 @@ class ZeroTrustHandshake:
                 print("Verification failed: Timestamp from the future.")
                 return False
 
+            nonce = payload.get("nonce")
+            if not isinstance(nonce, str):
+                print("Verification failed: missing or invalid nonce.")
+                return False
+
+            self._cleanup_nonces(current_time)
+            if nonce in self.seen_nonces:
+                print("Verification failed: Replay attack detected (nonce already seen).")
+                return False
+
             payload_str = json.dumps(payload, sort_keys=True).encode('utf-8')
             expected_signature = hmac.new(self.shared_secret, payload_str, hashlib.sha256).hexdigest()
             
-            return hmac.compare_digest(expected_signature, received_signature)
+            if hmac.compare_digest(expected_signature, received_signature):
+                self.seen_nonces[nonce] = payload_time
+                return True
+            return False
         except KeyError as e:
             print(f"Verification failed: Missing key {e}")
             return False
@@ -98,7 +120,13 @@ if __name__ == "__main__":
     is_valid = handshake.verify_payload(signed_msg)
     print("\nVerification Result:", "SUCCESS" if is_valid else "FAILED")
     
-    # 4. Attempt to tamper with the message
+    # 4. Attempt to replay the message
+    is_valid_replay = handshake.verify_payload(signed_msg)
+    print("Replay Verification Result:", "SUCCESS" if is_valid_replay else "FAILED")
+
+    # 5. Attempt to tamper with the message
+    # Reset seen_nonces for tampered test to bypass replay check
+    handshake.seen_nonces.clear()
     signed_msg["payload"]["target_coordinates"]["lat"] = 59.9999
     is_valid_tampered = handshake.verify_payload(signed_msg)
     print("Tampered Verification Result:", "SUCCESS" if is_valid_tampered else "FAILED")
