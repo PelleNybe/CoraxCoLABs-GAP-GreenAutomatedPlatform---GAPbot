@@ -91,9 +91,7 @@ export default function AuditLedger() {
 
   // Simulate incoming secured ledger entries
   useEffect(() => {
-    const addLog = () => {
-      if (isPaused) return;
-
+    const generateLog = (): LogEntry => {
       // Populate random buffer in one call
       window.crypto.getRandomValues(randomBuffer32);
 
@@ -101,7 +99,7 @@ export default function AuditLedger() {
       const packetId = Math.floor(randomBuffer32[1] / (0xffffffff + 1) * 9999);
       const size = Math.floor(randomBuffer32[2] / (0xffffffff + 1) * 512);
 
-      const newLog: LogEntry = {
+      return {
         id: window.crypto.randomUUID(),
         timestamp: new Date().toISOString(),
         type: event.type,
@@ -110,14 +108,25 @@ export default function AuditLedger() {
         hash: generateHash(),
         payload: `[DATA_PACKET_${packetId}] Size: ${size}KB | Sig: Valid`
       };
+    };
 
-      setLogs((prev) => [...prev.slice(-49), newLog]); // Keep max 50 logs for performance
+    const addLog = () => {
+      if (isPaused) return;
+      setLogs((prev) => [...prev.slice(-49), generateLog()]); // Keep max 50 logs for performance
     };
 
     const interval = setInterval(addLog, 1200); // New log every 1.2s
 
     // Initial burst
-    for(let i=0; i<10; i++) addLog();
+    if (!isPaused) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setLogs((prev) => {
+        if (prev.length > 0) return prev; // Only do initial burst once
+        const initialLogs: LogEntry[] = [];
+        for (let i = 0; i < 10; i++) initialLogs.push(generateLog());
+        return initialLogs;
+      });
+    }
 
     return () => clearInterval(interval);
   }, [isPaused]);
