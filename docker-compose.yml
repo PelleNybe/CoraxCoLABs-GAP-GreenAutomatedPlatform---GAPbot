@@ -5,9 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: gap_edge_inference
-    network_mode: "host"
-    ipc: "host"
-    pid: "host"
     devices:
       # Expose Hailo-8 NPU to the container
       - "/dev/hailo0:/dev/hailo0"
