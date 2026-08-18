@@ -2,7 +2,6 @@ import unittest
 from unittest.mock import patch, MagicMock
 import json
 import sys
-import importlib
 
 # First mock rclpy completely
 mock_rclpy = MagicMock()
