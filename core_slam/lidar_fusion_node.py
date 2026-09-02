@@ -23,6 +23,12 @@ class LidarFusionNode(Node):
         self.spatial_pub = self.create_publisher(
             String, '/core_slam/spatial_representation', 10)
         
+        self.cached_spatial_data = json.dumps({
+            "status": "fusion_active",
+            "point_cloud_density": "high",
+            "localization_confidence": 0.95
+        })
+
         self.get_logger().info("Lidar Fusion Node Initialized.")
 
     def odom_callback(self, msg):
@@ -33,13 +39,8 @@ class LidarFusionNode(Node):
         self.publish_spatial_data()
 
     def publish_spatial_data(self):
-        spatial_data = {
-            "status": "fusion_active",
-            "point_cloud_density": "high",
-            "localization_confidence": 0.95
-        }
         msg = String()
-        msg.data = json.dumps(spatial_data)
+        msg.data = self.cached_spatial_data
         self.spatial_pub.publish(msg)
 
 def main(args=None):
