@@ -70,9 +70,14 @@ const EVENT_TYPES = [
 const hashBuffer = new Uint8Array(32);
 const randomBuffer32 = new Uint32Array(3);
 
+const hexTable = new Array(256);
+for (let i = 0; i < 256; i++) hexTable[i] = i.toString(16).padStart(2, '0');
+
 const generateHash = () => {
     window.crypto.getRandomValues(hashBuffer);
-    return Array.from(hashBuffer, byte => byte.toString(16).padStart(2, '0')).join('');
+    let hash = '';
+    for (let i = 0; i < 32; i++) hash += hexTable[hashBuffer[i]];
+    return hash;
 }
 
 export default function AuditLedger() {
